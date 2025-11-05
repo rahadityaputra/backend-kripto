@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserGender {
+  MALE
+  FEMALE
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  email           String    @db.VarChar(1000)    @unique
+  username        String    @db.VarChar(1000)    @unique
+  password        String
+  role            String    @default("user")
+  emailVerified   Boolean   @default(false)
+  isMemberUser    Boolean   @default(false)
+  identityCardUrl String?   @map("identity_card_url")
+  membershipCardUrl String?   @map("membership_card_url")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  profile         Profile?
+
+  @@map("users")
+}
+
+model Profile {
+  id              Int       @id @default(autoincrement())
+  userId          Int       @unique @map("user_id")
+  fullname        String    @db.VarChar(1000)    
+  birthDate       String    @db.VarChar(1000)  @map("birth_date")
+  gender          UserGender  @default(MALE) 
+  address         String    @db.VarChar(1000)
+  avatarUrl       String    @db.VarChar(1000) 
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  user            User      @relation(fields: [userId], references: [id])
+
+  @@map("profiles")
+}
