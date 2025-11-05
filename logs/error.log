@@ -1,0 +1,68 @@
+2025-11-05 15:58:42:5842 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 15:59:55:5955 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:59:55:5955 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:56:456 [31merror[39m: [31mUpdate profile data error: [39m
+[31mInvalid `prisma.profile.update()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:250:47[39m
+
+[31m  247 [39m
+[31m  248 logger.info("encryptedData", encryptedData);[39m
+[31m  249 [39m
+[31m→ 250 const data = await prisma.profile.update({[39m
+[31m        where: {[39m
+[31m          userId: 23[39m
+[31m        },[39m
+[31m        data: {[39m
+[31m          fullname: "SYTLZ/9+MQVVWf8tn+xfMfRnp5t3dC/LXmSPmEiB+JdAkvsHaXkXIG91VynIE6cf+b+9v/lQ0s/gv/t6sO2udWpLrDIGjnPJNtnPGQNK+JTYAl6KaKnXyHwBpr3Jaz0oJflzkiSWnPgXLmF1CqcFOq6+6bgOOkS4JvuZIIJ4BDrUb9zVdPXdDzyH9116+UuKNr97vy/rrY1ORggvrzAF3cdbOeMPsTKIhw9JoL1rfswoRTKQFJFFoKu+X8V6dGA4q8eT0fjEeebUAc9AYe1D10hJnA3io4ZcDH6XDbzlNTsnkyGWTrqsyF1evYa3ZRKqRtD3WjH3qkHEbiadFAMk2w==",[39m
+[31m          email: "",[39m
+[31m          ~~~~~[39m
+[31m          address: "Bw9Is0vQgFUBx8+lmm3PxfwJ3GX/Iq/cbQ45X2bQhhxC/L90YTdvBdtailRItIR29MvEvzENCUy0g/lMP8wxygkttMyYRihXTedgVjxVptyY9cISEXBF7cAuwr4XkZa/l+BC281yEySlnyBaxmkzuc4hstMKlbop8EhLJ8Thsom7dkcBYEiyyhj8gjhLeMHfAIRFNqAneeMbkx3zLxGASDOV2KlfG8B03BLF8djAKnYOlqalNJn30fWdrWxpxUt6x9dniGJJRxcaShuD7sAfhh75CUoM5pAuSOCLJQq/c8S58m7x/kDLDdWV7UbYDFIFzm9Uo+BD5YcTFAf2rkpIrg==",[39m
+[31m          gender: "P/Bbk4NwPnpRlTyrGrOLFVbYCUvdPBhxWCkkPgfazgWBWKYOf9ePigtfT/QSCzPl7YbdfbwIZfm6V/kYsBlMwWE/apViS+sd0vLLYzZUGwemj/mOlghA5/nMnQDYmZhbaOYFBpXj5IxweTTGtUskBrfKosKLyOktsqCbQm+NCng5YyicM0fQoCvrHFMAE4VaKHBUgSn5aLqZYzEYWUkKervYD6t45HdEug1o3myjxmBReQgASJu00CgS0kaR+OUF+/Z/eU4WlLOXCcBoMQWnYIMbEUvZJwV4iRA7YIdjHT7kmKahWVuCWeW+qb3TpZY2eNIi+80yJv6pnSKb6Migww==",[39m
+[31m          dateOfBirth: "QNqcipsl9F6JKt++QmpSzcvbJqXvUk/lhl3yRIf/FCoDMn1mDndK+IFCfM3JEe8N90DbeyUznJw65Dq3BKFLOKEqgqJw6RQG/NF5JcSgYVWE4fq2kItNhXK7j+CGWu5/es2hVchwL87NtGXTC25IRiip7C3u+63BSe4LEFcRFIZFnEujfZls5qQK6Eg5uLsj0to7cLOIX2wYnfSkGw8IUNzAKikjxTxY1pETsydLuP2Chs/utjZI5jQbjJD5F4y0FVcXpWMrHyHg+NVam3peBGW1hgb3Zu2vGBklX2draq6k7YTDNFU8OQGPOLc/6Rvj/oCHnE2Uc6EqwP/U5B+t7A==",[39m
+[31m      ?   birthDate?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   avatarUrl?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   user?: UserUpdateOneRequiredWithoutProfileNestedInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `email`. Available options are marked with ?.[39m
+2025-11-05 16:04:56:456 [31merror[39m: [31mUpdate profile data controller error: [39m
+[31mInvalid `prisma.profile.update()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:250:47[39m
+
+[31m  247 [39m
+[31m  248 logger.info("encryptedData", encryptedData);[39m
+[31m  249 [39m
+[31m→ 250 const data = await prisma.profile.update({[39m
+[31m        where: {[39m
+[31m          userId: 23[39m
+[31m        },[39m
+[31m        data: {[39m
+[31m          fullname: "SYTLZ/9+MQVVWf8tn+xfMfRnp5t3dC/LXmSPmEiB+JdAkvsHaXkXIG91VynIE6cf+b+9v/lQ0s/gv/t6sO2udWpLrDIGjnPJNtnPGQNK+JTYAl6KaKnXyHwBpr3Jaz0oJflzkiSWnPgXLmF1CqcFOq6+6bgOOkS4JvuZIIJ4BDrUb9zVdPXdDzyH9116+UuKNr97vy/rrY1ORggvrzAF3cdbOeMPsTKIhw9JoL1rfswoRTKQFJFFoKu+X8V6dGA4q8eT0fjEeebUAc9AYe1D10hJnA3io4ZcDH6XDbzlNTsnkyGWTrqsyF1evYa3ZRKqRtD3WjH3qkHEbiadFAMk2w==",[39m
+[31m          email: "",[39m
+[31m          ~~~~~[39m
+[31m          address: "Bw9Is0vQgFUBx8+lmm3PxfwJ3GX/Iq/cbQ45X2bQhhxC/L90YTdvBdtailRItIR29MvEvzENCUy0g/lMP8wxygkttMyYRihXTedgVjxVptyY9cISEXBF7cAuwr4XkZa/l+BC281yEySlnyBaxmkzuc4hstMKlbop8EhLJ8Thsom7dkcBYEiyyhj8gjhLeMHfAIRFNqAneeMbkx3zLxGASDOV2KlfG8B03BLF8djAKnYOlqalNJn30fWdrWxpxUt6x9dniGJJRxcaShuD7sAfhh75CUoM5pAuSOCLJQq/c8S58m7x/kDLDdWV7UbYDFIFzm9Uo+BD5YcTFAf2rkpIrg==",[39m
+[31m          gender: "P/Bbk4NwPnpRlTyrGrOLFVbYCUvdPBhxWCkkPgfazgWBWKYOf9ePigtfT/QSCzPl7YbdfbwIZfm6V/kYsBlMwWE/apViS+sd0vLLYzZUGwemj/mOlghA5/nMnQDYmZhbaOYFBpXj5IxweTTGtUskBrfKosKLyOktsqCbQm+NCng5YyicM0fQoCvrHFMAE4VaKHBUgSn5aLqZYzEYWUkKervYD6t45HdEug1o3myjxmBReQgASJu00CgS0kaR+OUF+/Z/eU4WlLOXCcBoMQWnYIMbEUvZJwV4iRA7YIdjHT7kmKahWVuCWeW+qb3TpZY2eNIi+80yJv6pnSKb6Migww==",[39m
+[31m          dateOfBirth: "QNqcipsl9F6JKt++QmpSzcvbJqXvUk/lhl3yRIf/FCoDMn1mDndK+IFCfM3JEe8N90DbeyUznJw65Dq3BKFLOKEqgqJw6RQG/NF5JcSgYVWE4fq2kItNhXK7j+CGWu5/es2hVchwL87NtGXTC25IRiip7C3u+63BSe4LEFcRFIZFnEujfZls5qQK6Eg5uLsj0to7cLOIX2wYnfSkGw8IUNzAKikjxTxY1pETsydLuP2Chs/utjZI5jQbjJD5F4y0FVcXpWMrHyHg+NVam3peBGW1hgb3Zu2vGBklX2draq6k7YTDNFU8OQGPOLc/6Rvj/oCHnE2Uc6EqwP/U5B+t7A==",[39m
+[31m      ?   birthDate?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   avatarUrl?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   user?: UserUpdateOneRequiredWithoutProfileNestedInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `email`. Available options are marked with ?.[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m

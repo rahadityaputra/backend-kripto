@@ -10,16 +10,7 @@ import { superEncrypt } from '../utils/superEncryption.utils';
 import JWTUtils from '../utils/jwt.utils';
 import { embedDCT8x8 } from '../utils/stego.utils';
 import { AESUtils } from '../utils/aes.utils';
-// import { bufferToMat } from '../utils/openCv.utils';
-
-
-
-
-// ======
-
 import { createCanvas, ImageData } from "canvas";
-import cv from "@techstark/opencv-js";
-
 
 interface UserRequest extends Request {
     user?: {
@@ -185,17 +176,17 @@ export class UserController {
     }
 
 
-    matToPngBuffer(mat: cv.Mat): Buffer {
-        const canvas = createCanvas(mat.cols, mat.rows);
-        const ctx = canvas.getContext("2d");
+//     matToPngBuffer(mat: cv.Mat): Buffer {
+//         const canvas = createCanvas(mat.cols, mat.rows);
+//         const ctx = canvas.getContext("2d");
 
-        const imgData = new Uint8ClampedArray(mat.data);
-        const imageData = new ImageData(imgData, mat.cols, mat.rows);
+//         const imgData = new Uint8ClampedArray(mat.data);
+//         const imageData = new ImageData(imgData, mat.cols, mat.rows);
 
-        ctx.putImageData(imageData, 0, 0);
+//         ctx.putImageData(imageData, 0, 0);
 
-        return canvas.toBuffer("image/png");
-}
+//         return canvas.toBuffer("image/png");
+// }
 
 
     async getUserProfile(req: UserRequest, res: Response) {

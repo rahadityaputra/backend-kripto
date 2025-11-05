@@ -1,0 +1,1157 @@
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mPOST /api/auth/login - IP: ::1[39m
+2025-11-05 15:44:48:4448 [34mdebug[39m: [34mRequest body: {"email":"rahadit.a.p123@gmail.com"}[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mValidating authentication input[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32m{ email: 'rahadit.a.p123@gmail.com', password: '12345678' }[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mLogin request received for email: rahadit.a.p123@gmail.com[39m
+2025-11-05 15:44:48:4448 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Login successful.",[39m
+[34m  "data": {[39m
+[34m    "user": {[39m
+[34m      "id": 23,[39m
+[34m      "email": "rahadit.a.p123@gmail.com",[39m
+[34m      "username": "rahadit.a.p123",[39m
+[34m      "role": "user",[39m
+[34m      "emailVerified": true,[39m
+[34m      "isMemberUser": true,[39m
+[34m      "identityCardUrl": null,[39m
+[34m      "membershipCardUrl": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png",[39m
+[34m      "createdAt": "2025-11-05T00:03:22.312Z",[39m
+[34m      "updatedAt": "2025-11-05T00:06:51.513Z"[39m
+[34m    },[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMjg4LCJleHAiOjE3NjIzMzIzNDh9.5X9oYmJxjJQecBxJRk-53gYrIZ-wswBOY_UyJhf36eE",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMjg4LCJleHAiOjE3NjIzMzI1ODh9.O15vLHf6wXaKo7AF97v6vb9rPXmTQWip0F6HV5G64-k"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:44:48:4448 [35mhttp[39m: [35mPOST /api/auth/login 200 880 - 83.861 ms[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:44:48:4448 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:44:48:4448 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.276 ms[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:44:48:4448 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:44:48:4448 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:44:48:4448 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.479 ms[39m
+2025-11-05 15:44:56:4456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:44:56:4456 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:44:56:4456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:44:56:4456 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 5.229 ms[39m
+2025-11-05 15:44:56:4456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:44:56:4456 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:44:56:4456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:44:56:4456 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 5.185 ms[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mPOST /api/auth/login - IP: ::1[39m
+2025-11-05 15:45:06:456 [34mdebug[39m: [34mRequest body: {"email":"rahadit.a.p123@gmail.com"}[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mValidating authentication input[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32m{ email: 'rahadit.a.p123@gmail.com', password: '12345678' }[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mLogin request received for email: rahadit.a.p123@gmail.com[39m
+2025-11-05 15:45:06:456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Login successful.",[39m
+[34m  "data": {[39m
+[34m    "user": {[39m
+[34m      "id": 23,[39m
+[34m      "email": "rahadit.a.p123@gmail.com",[39m
+[34m      "username": "rahadit.a.p123",[39m
+[34m      "role": "user",[39m
+[34m      "emailVerified": true,[39m
+[34m      "isMemberUser": true,[39m
+[34m      "identityCardUrl": null,[39m
+[34m      "membershipCardUrl": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png",[39m
+[34m      "createdAt": "2025-11-05T00:03:22.312Z",[39m
+[34m      "updatedAt": "2025-11-05T00:06:51.513Z"[39m
+[34m    },[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMzA2LCJleHAiOjE3NjIzMzIzNjZ9.0--3iZqIJYPYURwBjcef_6rz7KK59IH_twImtJ_cNhQ",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMzA2LCJleHAiOjE3NjIzMzI2MDZ9._1fMB5C0_Pw6aNLE6OOc64seFrLGuCVSE6igR072Qtk"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:06:456 [35mhttp[39m: [35mPOST /api/auth/login 200 880 - 52.633 ms[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:06:456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:06:456 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.055 ms[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:06:456 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:06:456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:06:456 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.700 ms[39m
+2025-11-05 15:45:09:459 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:09:459 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:09:459 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:09:459 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 6.204 ms[39m
+2025-11-05 15:45:09:459 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:09:459 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:09:459 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:09:459 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.863 ms[39m
+2025-11-05 15:45:11:4511 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:11:4511 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:11:4511 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:11:4511 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.717 ms[39m
+2025-11-05 15:45:11:4511 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:11:4511 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:11:4511 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:11:4511 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.787 ms[39m
+2025-11-05 15:45:16:4516 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:16:4516 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:16:4516 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:16:4516 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.383 ms[39m
+2025-11-05 15:45:16:4516 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:16:4516 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:16:4516 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:16:4516 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.666 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.751 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.521 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mGET /api/news/exclusive 200 312 - 40.271 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 25.361 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 27.700 ms[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:17:4517 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:17:4517 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:17:4517 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 25.061 ms[39m
+2025-11-05 15:45:19:4519 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:19:4519 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:19:4519 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:19:4519 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.581 ms[39m
+2025-11-05 15:45:19:4519 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:19:4519 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:19:4519 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:19:4519 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.679 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.383 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 1.893 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 20.120 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 12.028 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 10.197 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 9.673 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.241 ms[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:22:4522 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:22:4522 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:22:4522 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 1.886 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.071 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.193 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 21.483 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 23.569 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 26.365 ms[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 15:45:24:4524 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 15:45:24:4524 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:45:24:4524 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 21.713 ms[39m
+2025-11-05 15:45:31:4531 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:31:4531 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:31:4531 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:31:4531 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.360 ms[39m
+2025-11-05 15:45:31:4531 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:31:4531 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:31:4531 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:31:4531 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.130 ms[39m
+2025-11-05 15:45:33:4533 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:33:4533 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:33:4533 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:33:4533 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.188 ms[39m
+2025-11-05 15:45:33:4533 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:45:33:4533 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:45:33:4533 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:45:33:4533 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.265 ms[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 15:58:42:5842 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 3.589 ms[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 15:58:42:5842 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 2.673 ms[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMzA2LCJleHAiOjE3NjIzMzI2MDZ9._1fMB5C0_Pw6aNLE6OOc64seFrLGuCVSE6igR072Qtk"}[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid refresh token",[39m
+[34m  "error": "jwt expired"[39m
+[34m}[39m
+2025-11-05 15:58:42:5842 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 401 72 - 2.521 ms[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMyMzA2LCJleHAiOjE3NjIzMzI2MDZ9._1fMB5C0_Pw6aNLE6OOc64seFrLGuCVSE6igR072Qtk"}[39m
+2025-11-05 15:58:42:5842 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 15:58:42:5842 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 15:58:42:5842 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid refresh token",[39m
+[34m  "error": "jwt expired"[39m
+[34m}[39m
+2025-11-05 15:58:42:5842 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 401 72 - 1.145 ms[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mPOST /api/auth/login - IP: ::1[39m
+2025-11-05 15:58:44:5844 [34mdebug[39m: [34mRequest body: {"email":"rahadit.a.p123@gmail.com"}[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mValidating authentication input[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32m{ email: 'rahadit.a.p123@gmail.com', password: '12345678' }[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mLogin request received for email: rahadit.a.p123@gmail.com[39m
+2025-11-05 15:58:44:5844 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Login successful.",[39m
+[34m  "data": {[39m
+[34m    "user": {[39m
+[34m      "id": 23,[39m
+[34m      "email": "rahadit.a.p123@gmail.com",[39m
+[34m      "username": "rahadit.a.p123",[39m
+[34m      "role": "user",[39m
+[34m      "emailVerified": true,[39m
+[34m      "isMemberUser": true,[39m
+[34m      "identityCardUrl": null,[39m
+[34m      "membershipCardUrl": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png",[39m
+[34m      "createdAt": "2025-11-05T00:03:22.312Z",[39m
+[34m      "updatedAt": "2025-11-05T00:06:51.513Z"[39m
+[34m    },[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTI0LCJleHAiOjE3NjIzMzMxODR9.WJFpBm8kx08wPwLdwGwvJni55Z4t3eMLrgtZ4xBORGg",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTI0LCJleHAiOjE3NjIzMzM0MjR9.KGEzrfozZE1ipV0rzLDnr8bdruQdJVJFUvSee6ePhTA"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:58:44:5844 [35mhttp[39m: [35mPOST /api/auth/login 200 880 - 51.221 ms[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:44:5844 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:58:44:5844 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 1.946 ms[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:44:5844 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:44:5844 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:58:44:5844 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 1.793 ms[39m
+2025-11-05 15:58:45:5845 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:45:5845 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:45:5845 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:58:45:5845 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.225 ms[39m
+2025-11-05 15:58:45:5845 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:58:45:5845 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:58:45:5845 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:58:45:5845 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 1.765 ms[39m
+2025-11-05 15:59:07:597 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:07:597 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:07:597 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:59:07:597 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.709 ms[39m
+2025-11-05 15:59:07:597 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:07:597 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:07:597 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:59:07:597 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.186 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 5.655 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 4.411 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTI0LCJleHAiOjE3NjIzMzM0MjR9.KGEzrfozZE1ipV0rzLDnr8bdruQdJVJFUvSee6ePhTA"}[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzMyNTV9.JK7g60_CNFaNYQ1lJ3w_MZnt7sKHtJ3bjZSPrl_c5bk",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 8.963 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTI0LCJleHAiOjE3NjIzMzM0MjR9.KGEzrfozZE1ipV0rzLDnr8bdruQdJVJFUvSee6ePhTA"}[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzMyNTV9.JK7g60_CNFaNYQ1lJ3w_MZnt7sKHtJ3bjZSPrl_c5bk",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 9.211 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.510 ms[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 15:59:55:5955 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 15:59:55:5955 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 15:59:55:5955 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.314 ms[39m
+2025-11-05 16:00:16:016 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:16:016 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:16:016 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:16:016 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 5.213 ms[39m
+2025-11-05 16:00:16:016 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:16:016 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:16:016 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:16:016 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.594 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.446 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 4.338 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 22.840 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 23.873 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 27.658 ms[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mGET /api/news/exclusive - IP: ::1[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:00:18:018 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:00:18:018 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:00:18:018 [35mhttp[39m: [35mGET /api/news/exclusive 304 - - 32.444 ms[39m
+2025-11-05 16:00:20:020 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:20:020 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:20:020 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:20:020 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.034 ms[39m
+2025-11-05 16:00:20:020 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:00:20:020 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:00:20:020 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:00:20:020 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.921 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 3.345 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 3.446 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mGET /api/user/profile 401 53 - 5.426 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:01:41 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mGET /api/user/profile 401 53 - 2.414 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"}[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM1MDF9.LEk2qhHe2GzAa_G7yAzvAD7vL7-NLhUMRhsZzcQnMc0",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM3NDF9.EF-FcJPOkyIlIoNrUDhBUPmI-v44nxLwv0WkMRP7ctQ"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 9.377 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"}[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM1MDF9.LEk2qhHe2GzAa_G7yAzvAD7vL7-NLhUMRhsZzcQnMc0",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM3NDF9.EF-FcJPOkyIlIoNrUDhBUPmI-v44nxLwv0WkMRP7ctQ"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 11.216 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"}[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM1MDF9.LEk2qhHe2GzAa_G7yAzvAD7vL7-NLhUMRhsZzcQnMc0",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM3NDF9.EF-FcJPOkyIlIoNrUDhBUPmI-v44nxLwv0WkMRP7ctQ"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 5.325 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 2.741 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzMTk1LCJleHAiOjE3NjIzMzM0OTV9.Ysuhy77fzk7PPEU437YJzJbp1jCLMhzLoFPWe621NT4"}[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Refresh token is valid",[39m
+[34m  "data": {[39m
+[34m    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM1MDF9.LEk2qhHe2GzAa_G7yAzvAD7vL7-NLhUMRhsZzcQnMc0",[39m
+[34m    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMzMzNDQxLCJleHAiOjE3NjIzMzM3NDF9.EF-FcJPOkyIlIoNrUDhBUPmI-v44nxLwv0WkMRP7ctQ"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 200 512 - 11.963 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "Token is valid"[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mPOST /api/user/verify-token 200 42 - 3.439 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:04:01:41 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:01:41 [35mhttp[39m: [35mGET /api/user/profile 304 - - 41.989 ms[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:04:01:41 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:04:02:42 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:04:02:42 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:04:02:42 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:02:42 [35mhttp[39m: [35mGET /api/user/profile 304 - - 30.405 ms[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:04:10:410 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:04:10:410 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:10:410 [35mhttp[39m: [35mGET /api/user/profile 304 - - 45.261 ms[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mGET /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mFetching user profile for user ID: 23[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32misMemberUser for User ID 23: true[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mfullname encrypted: RY6Fsn2wLUVA7w1fE1wiqHy9mCFAmMn0IR7g64A1KkHPeKTf5AGsT3/ewicetKe2D2xrydMvK/AZ8rDOPtJYITClzQ1Cv/zAbAS2bCmEGuii4TEOus0iIw+kbShkvr8rqkLikrjhoWpv8ouB7W32BMFqf9H70zFzBbmS6ju4iAxgRWueo8Ol6LeuGpxL7S1HACj7yK71FQsydqlu1IP3zW3AOrGGB5bzi3eqJPt2wyGWiFPfKxycXsWQf5/ngCLGRXiU9ahF+pN2ktNtnfgStsdHqjT4ikmh9+Viy/r46Qxe1KjBditDuISwccFlgbi9vE34LVry7GfbrSHL8Jy1hQ==[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32maddress encrypted: JGN/7We/Nnqlk92b+GZ5AzzTdSQRdPARIi79RVvak/Aqxe8crDuye6fAH+PTHQeE1dUmrkf0F7nlBwzTDa4UmVc4/CT9ZFE0M0I9dI1xQKxxxIotGDjPiRJKytnFo4WJ5TIk0ZZY2Bavd0rlu+9y6hUo4EpwqrgZjunmsfPpnjBURtVkMr8Zz/Nj+Nso2evOiHaE+4a9UP/BJPXLRsEEtosN6qrUc3KNss/fpfyJHvpV4RJ+HEDiZ8TavCfAfSDbZwVDz319iAAGZ6xozG5qyXO4W4HoXaSQbxR8GvkAisSLrInvYtqeNDnPi1x+5IRbcgvS0S7/D/89LtY6PrH9iQ==[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mgender encrypted   : MALE[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32mSuccessfully decrypted profile for User ID: 23[39m
+2025-11-05 16:04:15:415 [32minfo[39m: [32m{[39m
+[32m  fullname: 'rahaditya abimanyu putra',[39m
+[32m  address: 'sendang',[39m
+[32m  birthDate: '2025-11-06'[39m
+[32m}[39m
+2025-11-05 16:04:15:415 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": true,[39m
+[34m  "message": "User profile retrieved successfully",[39m
+[34m  "data": {[39m
+[34m    "fullname": "rahaditya abimanyu putra",[39m
+[34m    "address": "sendang",[39m
+[34m    "birthDate": "2025-11-06",[39m
+[34m    "isMemberUser": true,[39m
+[34m    "membershipCardURL": "https://yeqndlqawxotbtwpwqtr.supabase.co/storage/v1/object/public/membership_cards/23/original-membership-card.png"[39m
+[34m  }[39m
+[34m}[39m
+2025-11-05 16:04:15:415 [35mhttp[39m: [35mGET /api/user/profile 304 - - 17.813 ms[39m
+2025-11-05 16:04:56:456 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:04:56:456 [32minfo[39m: [32mPUT /api/user/profile - IP: ::1[39m
+2025-11-05 16:04:56:456 [32minfo[39m: [32mUpdating profile data for user ID: 23[39m
+2025-11-05 16:04:56:456 [32minfo[39m: [32mencryptedData[39m
+2025-11-05 16:04:56:456 [31merror[39m: [31mUpdate profile data error: [39m
+[31mInvalid `prisma.profile.update()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:250:47[39m
+
+[31m  247 [39m
+[31m  248 logger.info("encryptedData", encryptedData);[39m
+[31m  249 [39m
+[31m→ 250 const data = await prisma.profile.update({[39m
+[31m        where: {[39m
+[31m          userId: 23[39m
+[31m        },[39m
+[31m        data: {[39m
+[31m          fullname: "SYTLZ/9+MQVVWf8tn+xfMfRnp5t3dC/LXmSPmEiB+JdAkvsHaXkXIG91VynIE6cf+b+9v/lQ0s/gv/t6sO2udWpLrDIGjnPJNtnPGQNK+JTYAl6KaKnXyHwBpr3Jaz0oJflzkiSWnPgXLmF1CqcFOq6+6bgOOkS4JvuZIIJ4BDrUb9zVdPXdDzyH9116+UuKNr97vy/rrY1ORggvrzAF3cdbOeMPsTKIhw9JoL1rfswoRTKQFJFFoKu+X8V6dGA4q8eT0fjEeebUAc9AYe1D10hJnA3io4ZcDH6XDbzlNTsnkyGWTrqsyF1evYa3ZRKqRtD3WjH3qkHEbiadFAMk2w==",[39m
+[31m          email: "",[39m
+[31m          ~~~~~[39m
+[31m          address: "Bw9Is0vQgFUBx8+lmm3PxfwJ3GX/Iq/cbQ45X2bQhhxC/L90YTdvBdtailRItIR29MvEvzENCUy0g/lMP8wxygkttMyYRihXTedgVjxVptyY9cISEXBF7cAuwr4XkZa/l+BC281yEySlnyBaxmkzuc4hstMKlbop8EhLJ8Thsom7dkcBYEiyyhj8gjhLeMHfAIRFNqAneeMbkx3zLxGASDOV2KlfG8B03BLF8djAKnYOlqalNJn30fWdrWxpxUt6x9dniGJJRxcaShuD7sAfhh75CUoM5pAuSOCLJQq/c8S58m7x/kDLDdWV7UbYDFIFzm9Uo+BD5YcTFAf2rkpIrg==",[39m
+[31m          gender: "P/Bbk4NwPnpRlTyrGrOLFVbYCUvdPBhxWCkkPgfazgWBWKYOf9ePigtfT/QSCzPl7YbdfbwIZfm6V/kYsBlMwWE/apViS+sd0vLLYzZUGwemj/mOlghA5/nMnQDYmZhbaOYFBpXj5IxweTTGtUskBrfKosKLyOktsqCbQm+NCng5YyicM0fQoCvrHFMAE4VaKHBUgSn5aLqZYzEYWUkKervYD6t45HdEug1o3myjxmBReQgASJu00CgS0kaR+OUF+/Z/eU4WlLOXCcBoMQWnYIMbEUvZJwV4iRA7YIdjHT7kmKahWVuCWeW+qb3TpZY2eNIi+80yJv6pnSKb6Migww==",[39m
+[31m          dateOfBirth: "QNqcipsl9F6JKt++QmpSzcvbJqXvUk/lhl3yRIf/FCoDMn1mDndK+IFCfM3JEe8N90DbeyUznJw65Dq3BKFLOKEqgqJw6RQG/NF5JcSgYVWE4fq2kItNhXK7j+CGWu5/es2hVchwL87NtGXTC25IRiip7C3u+63BSe4LEFcRFIZFnEujfZls5qQK6Eg5uLsj0to7cLOIX2wYnfSkGw8IUNzAKikjxTxY1pETsydLuP2Chs/utjZI5jQbjJD5F4y0FVcXpWMrHyHg+NVam3peBGW1hgb3Zu2vGBklX2draq6k7YTDNFU8OQGPOLc/6Rvj/oCHnE2Uc6EqwP/U5B+t7A==",[39m
+[31m      ?   birthDate?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   avatarUrl?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   user?: UserUpdateOneRequiredWithoutProfileNestedInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `email`. Available options are marked with ?.[39m
+2025-11-05 16:04:56:456 [31merror[39m: [31mUpdate profile data controller error: [39m
+[31mInvalid `prisma.profile.update()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:250:47[39m
+
+[31m  247 [39m
+[31m  248 logger.info("encryptedData", encryptedData);[39m
+[31m  249 [39m
+[31m→ 250 const data = await prisma.profile.update({[39m
+[31m        where: {[39m
+[31m          userId: 23[39m
+[31m        },[39m
+[31m        data: {[39m
+[31m          fullname: "SYTLZ/9+MQVVWf8tn+xfMfRnp5t3dC/LXmSPmEiB+JdAkvsHaXkXIG91VynIE6cf+b+9v/lQ0s/gv/t6sO2udWpLrDIGjnPJNtnPGQNK+JTYAl6KaKnXyHwBpr3Jaz0oJflzkiSWnPgXLmF1CqcFOq6+6bgOOkS4JvuZIIJ4BDrUb9zVdPXdDzyH9116+UuKNr97vy/rrY1ORggvrzAF3cdbOeMPsTKIhw9JoL1rfswoRTKQFJFFoKu+X8V6dGA4q8eT0fjEeebUAc9AYe1D10hJnA3io4ZcDH6XDbzlNTsnkyGWTrqsyF1evYa3ZRKqRtD3WjH3qkHEbiadFAMk2w==",[39m
+[31m          email: "",[39m
+[31m          ~~~~~[39m
+[31m          address: "Bw9Is0vQgFUBx8+lmm3PxfwJ3GX/Iq/cbQ45X2bQhhxC/L90YTdvBdtailRItIR29MvEvzENCUy0g/lMP8wxygkttMyYRihXTedgVjxVptyY9cISEXBF7cAuwr4XkZa/l+BC281yEySlnyBaxmkzuc4hstMKlbop8EhLJ8Thsom7dkcBYEiyyhj8gjhLeMHfAIRFNqAneeMbkx3zLxGASDOV2KlfG8B03BLF8djAKnYOlqalNJn30fWdrWxpxUt6x9dniGJJRxcaShuD7sAfhh75CUoM5pAuSOCLJQq/c8S58m7x/kDLDdWV7UbYDFIFzm9Uo+BD5YcTFAf2rkpIrg==",[39m
+[31m          gender: "P/Bbk4NwPnpRlTyrGrOLFVbYCUvdPBhxWCkkPgfazgWBWKYOf9ePigtfT/QSCzPl7YbdfbwIZfm6V/kYsBlMwWE/apViS+sd0vLLYzZUGwemj/mOlghA5/nMnQDYmZhbaOYFBpXj5IxweTTGtUskBrfKosKLyOktsqCbQm+NCng5YyicM0fQoCvrHFMAE4VaKHBUgSn5aLqZYzEYWUkKervYD6t45HdEug1o3myjxmBReQgASJu00CgS0kaR+OUF+/Z/eU4WlLOXCcBoMQWnYIMbEUvZJwV4iRA7YIdjHT7kmKahWVuCWeW+qb3TpZY2eNIi+80yJv6pnSKb6Migww==",[39m
+[31m          dateOfBirth: "QNqcipsl9F6JKt++QmpSzcvbJqXvUk/lhl3yRIf/FCoDMn1mDndK+IFCfM3JEe8N90DbeyUznJw65Dq3BKFLOKEqgqJw6RQG/NF5JcSgYVWE4fq2kItNhXK7j+CGWu5/es2hVchwL87NtGXTC25IRiip7C3u+63BSe4LEFcRFIZFnEujfZls5qQK6Eg5uLsj0to7cLOIX2wYnfSkGw8IUNzAKikjxTxY1pETsydLuP2Chs/utjZI5jQbjJD5F4y0FVcXpWMrHyHg+NVam3peBGW1hgb3Zu2vGBklX2draq6k7YTDNFU8OQGPOLc/6Rvj/oCHnE2Uc6EqwP/U5B+t7A==",[39m
+[31m      ?   birthDate?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   avatarUrl?: String | StringFieldUpdateOperationsInput,[39m
+[31m      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,[39m
+[31m      ?   user?: UserUpdateOneRequiredWithoutProfileNestedInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `email`. Available options are marked with ?.[39m
+2025-11-05 16:04:56:456 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Internal server error",[39m
+[34m  "error": "\nInvalid `prisma.profile.update()` invocation in\n/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:250:47\n\n  247 \n  248 logger.info(\"encryptedData\", encryptedData);\n  249 \n→ 250 const data = await prisma.profile.update({\n        where: {\n          userId: 23\n        },\n        data: {\n          fullname: \"SYTLZ/9+MQVVWf8tn+xfMfRnp5t3dC/LXmSPmEiB+JdAkvsHaXkXIG91VynIE6cf+b+9v/lQ0s/gv/t6sO2udWpLrDIGjnPJNtnPGQNK+JTYAl6KaKnXyHwBpr3Jaz0oJflzkiSWnPgXLmF1CqcFOq6+6bgOOkS4JvuZIIJ4BDrUb9zVdPXdDzyH9116+UuKNr97vy/rrY1ORggvrzAF3cdbOeMPsTKIhw9JoL1rfswoRTKQFJFFoKu+X8V6dGA4q8eT0fjEeebUAc9AYe1D10hJnA3io4ZcDH6XDbzlNTsnkyGWTrqsyF1evYa3ZRKqRtD3WjH3qkHEbiadFAMk2w==\",\n          email: \"\",\n          ~~~~~\n          address: \"Bw9Is0vQgFUBx8+lmm3PxfwJ3GX/Iq/cbQ45X2bQhhxC/L90YTdvBdtailRItIR29MvEvzENCUy0g/lMP8wxygkttMyYRihXTedgVjxVptyY9cISEXBF7cAuwr4XkZa/l+BC281yEySlnyBaxmkzuc4hstMKlbop8EhLJ8Thsom7dkcBYEiyyhj8gjhLeMHfAIRFNqAneeMbkx3zLxGASDOV2KlfG8B03BLF8djAKnYOlqalNJn30fWdrWxpxUt6x9dniGJJRxcaShuD7sAfhh75CUoM5pAuSOCLJQq/c8S58m7x/kDLDdWV7UbYDFIFzm9Uo+BD5YcTFAf2rkpIrg==\",\n          gender: \"P/Bbk4NwPnpRlTyrGrOLFVbYCUvdPBhxWCkkPgfazgWBWKYOf9ePigtfT/QSCzPl7YbdfbwIZfm6V/kYsBlMwWE/apViS+sd0vLLYzZUGwemj/mOlghA5/nMnQDYmZhbaOYFBpXj5IxweTTGtUskBrfKosKLyOktsqCbQm+NCng5YyicM0fQoCvrHFMAE4VaKHBUgSn5aLqZYzEYWUkKervYD6t45HdEug1o3myjxmBReQgASJu00CgS0kaR+OUF+/Z/eU4WlLOXCcBoMQWnYIMbEUvZJwV4iRA7YIdjHT7kmKahWVuCWeW+qb3TpZY2eNIi+80yJv6pnSKb6Migww==\",\n          dateOfBirth: \"QNqcipsl9F6JKt++QmpSzcvbJqXvUk/lhl3yRIf/FCoDMn1mDndK+IFCfM3JEe8N90DbeyUznJw65Dq3BKFLOKEqgqJw6RQG/NF5JcSgYVWE4fq2kItNhXK7j+CGWu5/es2hVchwL87NtGXTC25IRiip7C3u+63BSe4LEFcRFIZFnEujfZls5qQK6Eg5uLsj0to7cLOIX2wYnfSkGw8IUNzAKikjxTxY1pETsydLuP2Chs/utjZI5jQbjJD5F4y0FVcXpWMrHyHg+NVam3peBGW1hgb3Zu2vGBklX2draq6k7YTDNFU8OQGPOLc/6Rvj/oCHnE2Uc6EqwP/U5B+t7A==\",\n      ?   birthDate?: String | StringFieldUpdateOperationsInput,\n      ?   avatarUrl?: String | StringFieldUpdateOperationsInput,\n      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n      ?   user?: UserUpdateOneRequiredWithoutProfileNestedInput\n        }\n      })\n\nUnknown argument `email`. Available options are marked with ?."[39m
+[34m}[39m
+2025-11-05 16:04:56:456 [35mhttp[39m: [35mPUT /api/user/profile 500 2346 - 44.406 ms[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:05:04:54 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 3.030 ms[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mPOST /api/user/verify-token - IP: ::1[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid or expired token"[39m
+[34m}[39m
+2025-11-05 16:05:04:54 [35mhttp[39m: [35mPOST /api/user/verify-token 401 53 - 2.216 ms[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMjQ4ODI4LCJleHAiOjE3NjIyNDkxMjh9.wKV6sf2pIws0KfndWkuEfK0a01dh2M9vcJgAkr1c6T0"}[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid refresh token",[39m
+[34m  "error": "jwt expired"[39m
+[34m}[39m
+2025-11-05 16:05:04:54 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 401 72 - 1.751 ms[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mIncoming request received[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mPOST /api/auth/verify-refresh-token - IP: ::1[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mRequest body: {"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJlbWFpbCI6InJhaGFkaXQuYS5wMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyMjQ4ODI4LCJleHAiOjE3NjIyNDkxMjh9.wKV6sf2pIws0KfndWkuEfK0a01dh2M9vcJgAkr1c6T0"}[39m
+2025-11-05 16:05:04:54 [32minfo[39m: [32mRefresh token verification request received[39m
+2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:05:04:54 [34mdebug[39m: [34mResponse body: {[39m
+[34m  "status": false,[39m
+[34m  "message": "Invalid refresh token",[39m
+[34m  "error": "jwt expired"[39m
+[34m}[39m
+2025-11-05 16:05:04:54 [35mhttp[39m: [35mPOST /api/auth/verify-refresh-token 401 72 - 2.771 ms[39m

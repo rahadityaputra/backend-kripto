@@ -1,4 +1,3 @@
-// steg-dct.ts
 import sharp from "sharp";
 
 /**
@@ -9,6 +8,7 @@ import sharp from "sharp";
 // Precompute constants
 const N = 8;
 const PI = Math.PI;
+// c[k] = sqrt(1/N) for k=0, sqrt(2/N) for k>0
 const c: number[] = new Array(N).fill(0).map((_, i) => (i === 0 ? Math.sqrt(1 / N) : Math.sqrt(2 / N)));
 
 function dct1d(vec: number[]): number[] {
@@ -23,6 +23,7 @@ function dct1d(vec: number[]): number[] {
   return out;
 }
 
+// 🛑 KOREKSI KRITIS: Menambahkan return out
 function idct1d(vec: number[]): number[] {
   const out = new Array(N).fill(0);
   for (let n = 0; n < N; n++) {
@@ -32,6 +33,7 @@ function idct1d(vec: number[]): number[] {
     }
     out[n] = sum;
   }
+  return out; // WAJIB ADA
 }
 
 // perform 2D DCT on 8x8 block (array of 64 numbers, row-major)
@@ -55,15 +57,21 @@ function dct2d(block: number[]): number[] {
 }
 
 function idct2d(block: number[]): number[] {
-  const rows = new Array(8);
-  // process columns inverse
+  // 1. Ubah array datar menjadi matriks 8x8
+  const blockMatrix: number[][] = [];
+  for (let r = 0; r < N; r++) {
+      blockMatrix.push(block.slice(r * N, (r + 1) * N));
+  }
+  
+  // 2. IDCT pada kolom
   const tmp = new Array(8).fill(0).map(() => new Array(8).fill(0));
   for (let cidx = 0; cidx < 8; cidx++) {
-    const col = new Array(8).fill(0).map((_, r) => block[r * 8 + cidx]);
+    const col = blockMatrix.map(r => r[cidx]);
     const colI = idct1d(col);
     for (let r = 0; r < 8; r++) tmp[r][cidx] = colI[r];
   }
-  // now rows IDCT
+  
+  // 3. IDCT pada baris
   const out: number[] = [];
   for (let r = 0; r < 8; r++) {
     const rowI = idct1d(tmp[r]);
@@ -85,17 +93,14 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
   const width = info.width;
   const height = info.height;
 
-  // create output array (float) initialize from pixels
+  // 1. KOREKSI LEVEL SHIFT: Inisialisasi piksel dengan nilai - 128
   const out = new Float64Array(data.length);
-  for (let i = 0; i < data.length; i++) out[i] = data[i];
+  for (let i = 0; i < data.length; i++) out[i] = data[i] - 128; 
 
-  // which coefficient positions to use (mid-freq) in zigzag order (avoid [0,0], avoid too high freqs)
-  // We'll choose these (row,col) pairs within 8x8 for embedding bytes (one byte per block per position set)
   const embedPositions = [
     [1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [2, 3], [3, 2], [4, 1]
   ];
-  // We'll embed one byte per block by using several coefficients: pack byte across positions by replacing low 2-3 bits each? Simpler: set LSB of one coefficient per bit. But for simplicity and robustness, we will **store full byte** in the first embedPosition coefficient by setting its low 8-bit value.
-  // iterate blocks
+
   let payloadIdx = 0;
   const totalBlocksX = Math.floor(width / N);
   const totalBlocksY = Math.floor(height / N);
@@ -109,7 +114,7 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
           const px = bx * N + c;
           const py = by * N + r;
           const idx = py * width + px;
-          block[r * N + c] = out[idx];
+          block[r * N + c] = out[idx]; // Sudah di-shift
         }
       }
 
@@ -119,10 +124,12 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
       // embed ONE byte into selected coefficient (first chosen)
       const [er, ec] = embedPositions[0];
       const posIndex = er * N + ec;
-      const coef = Math.round(dct[posIndex]);
-      // preserve high part, set low 8 bits to payload byte
-      const high = Math.floor(coef / 256) * 256;
+      
+      const coef = dct[posIndex]; 
+      // KOREKSI LOGIKA EMBED: Ambil bagian tinggi dari koefisien terdekat kelipatan 256
+      const high = Math.round(coef / 256) * 256;
       const newCoef = high + payloadBuffer[payloadIdx++];
+      
       dct[posIndex] = newCoef;
 
       // inverse
@@ -134,8 +141,11 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
           const px = bx * N + c;
           const py = by * N + r;
           const idx = py * width + px;
+          
+          // KOREKSI LEVEL SHIFT: Geser kembali + 128 sebelum clamping
+          let v = Math.round(idct[r * N + c] + 128); 
+          
           // clamp 0..255
-          let v = Math.round(idct[r * N + c]);
           if (v < 0) v = 0;
           if (v > 255) v = 255;
           out[idx] = v;
@@ -152,16 +162,16 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
 
 /**
  * Extract payloadBuffer from imageBuffer. 
- * Will read sequentially bytes from blocks until terminatorBuffer sequence found OR until maxBytes (safety).
- * If you used length-prefixed payloadBuffer, the embedded first 4 bytes are length and you can parse from extracted bytes.
  */
 export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, terminator?: Buffer): Promise<Buffer> {
   const img = await sharp(imageBuffer).greyscale().raw().toBuffer({ resolveWithObject: true });
   const { data, info } = img;
   const width = info.width;
   const height = info.height;
+  
+  // 1. KOREKSI LEVEL SHIFT: Inisialisasi piksel dengan nilai - 128
   const inArr = new Float64Array(data.length);
-  for (let i = 0; i < data.length; i++) inArr[i] = data[i];
+  for (let i = 0; i < data.length; i++) inArr[i] = data[i] - 128;
 
   const totalBlocksX = Math.floor(width / N);
   const totalBlocksY = Math.floor(height / N);
@@ -178,15 +188,17 @@ export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, t
           const px = bx * N + c;
           const py = by * N + r;
           const idx = py * width + px;
-          block[r * N + c] = inArr[idx];
+          block[r * N + c] = inArr[idx]; // Sudah di-shift
         }
       }
 
       const dct = dct2d(block);
       const [er, ec] = pos;
       const posIndex = er * N + ec;
-      const coef = Math.round(dct[posIndex]);
-      const byte = ((coef % 256) + 256) % 256;
+      
+      const coef = dct[posIndex];
+      // KOREKSI EKSTRAKSI: Bulatkan (untuk mengatasi float error) lalu ambil mod 256.
+      const byte = ((Math.round(coef) % 256) + 256) % 256;
       extracted.push(byte);
 
       // check terminator if provided
