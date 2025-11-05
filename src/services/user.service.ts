@@ -4,7 +4,6 @@ import JWTUtils from '../utils/jwt.utils';
 import { logger } from '../config/logger.config';
 import { UserMetadata } from '@supabase/supabase-js';
 import { SupabaseStorageService } from './supabase.service';
-import { log } from 'console';
 
 const prisma = new PrismaClient();
 interface VerifyRefreshTokenResponse {
@@ -46,11 +45,6 @@ export class UserService {
             return user;
         } catch (error) {
             logger.error(`Set member user error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            // return {
-            //     status: false,
-            //     message: 'Failed to set member user',
-            //     error: error instanceof Error ? error.message : 'Unknown error'
-            // };
             throw error;
         }
     }
@@ -113,9 +107,19 @@ export class UserService {
         return decryptedProfile;
       }
 
+    
+
 
     async getUserProfile(userId: number) {
         try {
+
+            const user = await prisma.user.findUnique({
+                where: {id : userId},
+                select : {
+                    email: true
+                }
+            })
+
             const profileUser = await prisma.profile.findUnique({
                 where: { userId: userId }
             });
@@ -134,14 +138,20 @@ export class UserService {
             logger.info("gender encrypted   : " + profileUser?.gender);
             const decryptedUserProfile = {
                 fullname: rsaDecrypt(profileUser?.fullname || ''),
+                email : rsaDecrypt(user?.email || ""),
                 address: rsaDecrypt(profileUser?.address || ''),
                 birthDate: rsaDecrypt(profileUser?.birthDate || ''),
+            
             }
 
             logger.info(`Successfully decrypted profile for User ID: ${userId}`);
             logger.info(decryptedUserProfile);    
+
+
+            const identityCardUrl = await SupabaseStorageService.getIdentityCardUrl(userId.toString());
             
-            const data = {...decryptedUserProfile, isMemberUser}
+            const data = {...decryptedUserProfile, avatar: profileUser.avatarUrl, gender: profileUser.gender, isMemberUser, lastUpdated: profileUser.updatedAt, identityCardUrl};
+            
             if (isMemberUser) {
                 const memberUser = await prisma.user.findUnique({
                     where: { id: userId },

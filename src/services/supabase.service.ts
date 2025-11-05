@@ -23,7 +23,7 @@ export class SupabaseStorageService {
             logger.info("Storage Bucket: " + identityBucket);
             logger.info(`Uploading encrypted identity card for user ID: ${userId}`);
 
-            const fileName = `${userId}-${Date.now()}.${fileExt}`;
+            const fileName = `${userId}-identity-card.${fileExt}`;
 
             const { data, error } = await supabase.storage
                 .from(identityBucket)
@@ -159,4 +159,26 @@ export class SupabaseStorageService {
         if (error) throw new Error(error.message);
         return data; 
     }
+
+    static async getIdentityCardUrl(userId: string) {
+        const filePath = `${userId}-identity-card.png`; // path file di bucket
+        const { data, error } = await supabase
+          .storage
+          .from(identityBucket)   // nama bucket
+          .createSignedUrl(filePath, 60); // URL berlaku 60 detik
+      
+        if (error) throw error;
+        return data.signedUrl;
+      }
+
+    static async downloadIdentityCard(path: string) {
+        const { data, error } = await supabase.storage
+            .from(identityBucket)
+            .download(path);
+
+        console.log("hasil download supabase",data);
+        if (error) throw new Error(error.message);
+        return data; 
+    }
+    
 }

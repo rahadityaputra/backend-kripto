@@ -93,6 +93,7 @@ export class AuthService {
             const avatarBuffer = await AvatarUtils.generateAvatarImageFile(userData.fullname);
 
             
+            
             const user = await prisma.user.create({
                 data: {
                     email: encryptedData.email,
@@ -100,7 +101,6 @@ export class AuthService {
                     password: hashedPassword,
                     role: userData.role || 'user',
                     emailVerified: true
-                    // emailVerified: false
                 }
             });
             

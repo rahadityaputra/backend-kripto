@@ -9,5 +9,6 @@ router.post('/membership/register', uploadMiddleware, (req, res) => userControll
 router.get('/profile', (req, res) => userController.getUserProfile(req, res));
 router.put('/profile', uploadMiddleware, (req, res) => userController.updateProfileData(req, res));
 router.get("/membership-card/download", userController.downloadMembershipCard);
+router.get("/identity-card/download", userController.downloadIdentityCard);
 
 export default router;

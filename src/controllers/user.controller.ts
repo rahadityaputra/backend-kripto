@@ -175,20 +175,6 @@ export class UserController {
         }
     }
 
-
-    //     matToPngBuffer(mat: cv.Mat): Buffer {
-    //         const canvas = createCanvas(mat.cols, mat.rows);
-    //         const ctx = canvas.getContext("2d");
-
-    //         const imgData = new Uint8ClampedArray(mat.data);
-    //         const imageData = new ImageData(imgData, mat.cols, mat.rows);
-
-    //         ctx.putImageData(imageData, 0, 0);
-
-    //         return canvas.toBuffer("image/png");
-    // }
-
-
     async getUserProfile(req: UserRequest, res: Response) {
         try {
             const userId = req.user?.userId;
@@ -248,7 +234,7 @@ export class UserController {
 
     async downloadMembershipCard(req: UserRequest, res: Response) {
         try {
-            const userId = req.user?.userId; // pastikan JWT middleware sudah set req.user
+            const userId = req.user?.userId; 
 
             if (!userId) {
                 return res.status(401).json({
@@ -257,7 +243,6 @@ export class UserController {
                 });
             }
 
-            // path penyimpanan membership card (harus sama dengan upload)
             const filename = `${userId}/stegano-membership-card.png`;
 
             const fileBlob = await SupabaseStorageService.downloadFile(filename);
@@ -280,5 +265,43 @@ export class UserController {
             });
         }
     }
+
+    async downloadIdentityCard(req: UserRequest, res: Response) {
+        try {
+            const userId = req.user?.userId; 
+
+            if (!userId) {
+                return res.status(401).json({
+                    status: false,
+                    message: "Unauthorized",
+                });
+            }
+
+            const filename = `${userId}-identity-card.png`;
+
+            const fileBlob = await SupabaseStorageService.downloadIdentityCard(filename);
+            const arrayBuffer = await fileBlob.arrayBuffer(); // kalau fileBlob adalah Blob
+            const buffer = Buffer.from(arrayBuffer);
+
+            const key = Buffer.from(process.env.AES_KEY!, "base64");
+            const bufferDecrypted = AESUtils.decryptBuffer(buffer, key);
+
+            res.setHeader("Content-Type", "image/png");
+            res.setHeader(
+                "Content-Disposition",
+                `attachment; filename=identity-card.png`
+            );
+
+            return res.send(bufferDecrypted);
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({
+                status: false,
+                message: "Failed to download membership card",
+                error: error instanceof Error ? error.message : "Unknown error",
+            });
+        }
+    }
+
 
 }

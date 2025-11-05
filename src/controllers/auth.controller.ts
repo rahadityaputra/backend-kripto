@@ -6,7 +6,7 @@ import { rsaDecrypt } from '../utils/rsa.utils';
 import JWTUtils from '../utils/jwt.utils';
 import { PrismaClient } from '@prisma/client';
 import { extractLSB } from '../utils/stego.utils';
-import { superEncrypt, superDecrypt } from '../utils/superEncryption.utils';
+import { superDecrypt } from '../utils/superEncryption.utils';
 
 
 const prisma = new PrismaClient();
