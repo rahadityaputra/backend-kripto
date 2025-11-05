@@ -1,0 +1,4 @@
+- [x] Add LSB steganography functions (embedLSB and extractLSB) to stego.utils.ts with length header for exact payload recovery
+- [x] Update uploadIdentityCard in user.controller.ts to use embedLSB instead of embedDCT8x8
+- [x] Update loginByCard in auth.controller.ts to use extractLSB instead of extractDCT8x8
+- [ ] Test the registration and login flow to verify image quality and login success

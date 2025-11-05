@@ -92,8 +92,6 @@ export class UserService {
         }
     }
 
- 
-    
     
     private decryptUserData<T extends Record<string, any>>(user: T): Omit<T, 'password'> {
         const decryptedUser = rsaDecryptFields(user, ENCRYPTED_FIELDS as (keyof T)[]);
@@ -129,10 +127,7 @@ export class UserService {
                 throw new Error('User not found');
             }
 
-            
-            
-            // const decryptedUser = this.decryptProfileData(profileUser);
-            // logger.info(`decryptedUser: ${JSON.stringify(decryptedUser)}`);
+        
 
             logger.info("fullname encrypted: " + profileUser?.fullname);
             logger.info("address encrypted: " + profileUser?.address);

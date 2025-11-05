@@ -60,9 +60,9 @@ function idct2d(block: number[]): number[] {
   // 1. Ubah array datar menjadi matriks 8x8
   const blockMatrix: number[][] = [];
   for (let r = 0; r < N; r++) {
-      blockMatrix.push(block.slice(r * N, (r + 1) * N));
+    blockMatrix.push(block.slice(r * N, (r + 1) * N));
   }
-  
+
   // 2. IDCT pada kolom
   const tmp = new Array(8).fill(0).map(() => new Array(8).fill(0));
   for (let cidx = 0; cidx < 8; cidx++) {
@@ -70,7 +70,7 @@ function idct2d(block: number[]): number[] {
     const colI = idct1d(col);
     for (let r = 0; r < 8; r++) tmp[r][cidx] = colI[r];
   }
-  
+
   // 3. IDCT pada baris
   const out: number[] = [];
   for (let r = 0; r < 8; r++) {
@@ -95,7 +95,7 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
 
   // 1. KOREKSI LEVEL SHIFT: Inisialisasi piksel dengan nilai - 128
   const out = new Float64Array(data.length);
-  for (let i = 0; i < data.length; i++) out[i] = data[i] - 128; 
+  for (let i = 0; i < data.length; i++) out[i] = data[i] - 128;
 
   const embedPositions = [
     [1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [2, 3], [3, 2], [4, 1]
@@ -124,12 +124,12 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
       // embed ONE byte into selected coefficient (first chosen)
       const [er, ec] = embedPositions[0];
       const posIndex = er * N + ec;
-      
-      const coef = dct[posIndex]; 
+
+      const coef = dct[posIndex];
       // KOREKSI LOGIKA EMBED: Ambil bagian tinggi dari koefisien terdekat kelipatan 256
       const high = Math.round(coef / 256) * 256;
       const newCoef = high + payloadBuffer[payloadIdx++];
-      
+
       dct[posIndex] = newCoef;
 
       // inverse
@@ -141,10 +141,10 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
           const px = bx * N + c;
           const py = by * N + r;
           const idx = py * width + px;
-          
+
           // KOREKSI LEVEL SHIFT: Geser kembali + 128 sebelum clamping
-          let v = Math.round(idct[r * N + c] + 128); 
-          
+          let v = Math.round(idct[r * N + c] + 128);
+
           // clamp 0..255
           if (v < 0) v = 0;
           if (v > 255) v = 255;
@@ -161,14 +161,14 @@ export async function embedDCT8x8(imageBuffer: Buffer, payloadBuffer: Buffer): P
 }
 
 /**
- * Extract payloadBuffer from imageBuffer. 
+ * Extract payloadBuffer from imageBuffer.
  */
 export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, terminator?: Buffer): Promise<Buffer> {
   const img = await sharp(imageBuffer).greyscale().raw().toBuffer({ resolveWithObject: true });
   const { data, info } = img;
   const width = info.width;
   const height = info.height;
-  
+
   // 1. KOREKSI LEVEL SHIFT: Inisialisasi piksel dengan nilai - 128
   const inArr = new Float64Array(data.length);
   for (let i = 0; i < data.length; i++) inArr[i] = data[i] - 128;
@@ -177,7 +177,7 @@ export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, t
   const totalBlocksY = Math.floor(height / N);
   const extracted: number[] = [];
 
-  const embedPositions = [[1,2],[2,1],[2,2],[1,3],[3,1],[2,3],[3,2],[4,1]];
+  const embedPositions = [[1, 2], [2, 1], [2, 2], [1, 3], [3, 1], [2, 3], [3, 2], [4, 1]];
   const pos = embedPositions[0];
   for (let by = 0; by < totalBlocksY && extracted.length < maxBytes; by++) {
     for (let bx = 0; bx < totalBlocksX && extracted.length < maxBytes; bx++) {
@@ -195,7 +195,7 @@ export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, t
       const dct = dct2d(block);
       const [er, ec] = pos;
       const posIndex = er * N + ec;
-      
+
       const coef = dct[posIndex];
       // KOREKSI EKSTRAKSI: Bulatkan (untuk mengatasi float error) lalu ambil mod 256.
       const byte = ((Math.round(coef) % 256) + 256) % 256;
@@ -219,4 +219,79 @@ export async function extractDCT8x8(imageBuffer: Buffer, maxBytes = 1024 * 16, t
 
   // if terminator not found, return what extracted (caller can parse length from first 4 bytes)
   return Buffer.from(extracted);
+}
+
+/**
+ * Embed payload into image using LSB steganography.
+ * Prepends 4-byte length header.
+ */
+export async function embedLSB(imageBuffer: Buffer, payloadBuffer: Buffer): Promise<Buffer> {
+  const img = await sharp(imageBuffer).raw().toBuffer({ resolveWithObject: true });
+  const { data, info } = img;
+  const width = info.width;
+  const height = info.height;
+  const channels = info.channels;
+
+  // Prepend length header (4 bytes, big-endian)
+  const lengthHeader = Buffer.alloc(4);
+  lengthHeader.writeUInt32BE(payloadBuffer.length, 0);
+  const fullPayload = Buffer.concat([lengthHeader, payloadBuffer]);
+
+  const totalPixels = width * height;
+  const maxCapacity = totalPixels * channels; // 1 bit per channel
+
+  if (fullPayload.length * 8 > maxCapacity) {
+    throw new Error('Payload too large for image capacity');
+  }
+
+  const out = Buffer.from(data); // copy
+
+  let payloadIdx = 0;
+  let bitIdx = 0;
+
+  for (let i = 0; i < out.length && payloadIdx < fullPayload.length; i++) {
+    const byte = fullPayload[payloadIdx];
+    for (let b = 0; b < 8 && payloadIdx < fullPayload.length; b++) {
+      if (bitIdx >= out.length) break;
+      const bit = (byte >> (7 - b)) & 1;
+      out[bitIdx] = (out[bitIdx] & 0xFE) | bit; // set LSB
+      bitIdx++;
+    }
+    payloadIdx++;
+  }
+
+  // Convert back to PNG
+  const png = await sharp(out, { raw: { width, height, channels } }).png().toBuffer();
+  return png;
+}
+
+/**
+ * Extract payload from image using LSB steganography.
+ * Uses 4-byte length header to determine payload size.
+ */
+export async function extractLSB(imageBuffer: Buffer): Promise<Buffer> {
+  const img = await sharp(imageBuffer).raw().toBuffer({ resolveWithObject: true });
+  const { data } = img;
+
+  // Extract length header (first 32 bits)
+  let length = 0;
+  for (let i = 0; i < 32; i++) {
+    const bit = data[i] & 1;
+    length |= bit << (31 - i);
+  }
+
+  const payload: number[] = [];
+  let bitIdx = 32; // start after header
+  for (let byteIdx = 0; byteIdx < length; byteIdx++) {
+    let byte = 0;
+    for (let b = 0; b < 8; b++) {
+      if (bitIdx >= data.length) break;
+      const bit = data[bitIdx] & 1;
+      byte |= bit << (7 - b);
+      bitIdx++;
+    }
+    payload.push(byte);
+  }
+
+  return Buffer.from(payload);
 }

@@ -65,11 +65,11 @@ export class SupabaseStorageService {
 
         if (error) throw error;
 
-        const { data: publicUrl } = supabase.storage
+        const { data: dataUrl } = supabase.storage
             .from(membershipCardBucket)
             .getPublicUrl(filePath);
 
-        return publicUrl.publicUrl;
+        return dataUrl.publicUrl;
     }
 
     static async uploadAvatarImage(buffer: Buffer, filename: string): Promise<string | null> {

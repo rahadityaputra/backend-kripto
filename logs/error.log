@@ -66,3 +66,175 @@
 2025-11-05 16:05:04:54 [31merror[39m: [31mAuthentication error: jwt expired[39m
 2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
 2025-11-05 16:05:04:54 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:16:20:1620 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 16:17:01:171 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:01:171 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 16:17:01:171 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:01:171 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31misMemberUser check error: User not found[39m
+2025-11-05 16:17:02:172 [31merror[39m: [31mGet profile error: User not found[39m
+2025-11-05 17:12:51:1251 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:12:51:1251 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:13:02:132 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:13:02:132 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:13:42:1342 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:13:42:1342 [31merror[39m: [31mGet profile error: [39m
+[31mInvalid `prisma.profile.findUnique()` invocation in[39m
+[31m/home/rahadityaputra/projects/kriptografi/backend-kripto/src/services/user.service.ts:119:54[39m
+
+[31m  116 [39m
+[31m  117 async getUserProfile(userId: number) {[39m
+[31m  118     try {[39m
+[31m→ 119         const profileUser = await prisma.profile.findUnique({[39m
+[31m                where: {[39m
+[31m                  userId: {[39m
+[31m                    userId: 26,[39m
+[31m                    iat: 1762335853,[39m
+[31m                    exp: 1762940653[39m
+[31m                  }[39m
+[31m                  ~~~~~~~~~~~~~~~~~[39m
+[31m                }[39m
+[31m              })[39m
+
+[31mArgument `userId`: Invalid value provided. Expected Int, provided Object.[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:21:44:2144 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:36:2836 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:36:2836 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:37:2837 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:37:2837 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:40:2840 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:40:2840 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:28:46:2846 [31merror[39m: [31mRefresh token verification error: jwt expired[39m
+2025-11-05 17:30:36:3036 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:30:46:3046 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:30:46:3046 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:30:46:3046 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:31:51:3151 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:31:51:3151 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:31:51:3151 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:31:51:3151 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:33:33:3333 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:33:33:3333 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:33:33:3333 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:33:33:3333 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:36:42:3642 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:36:42:3642 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:36:42:3642 [31merror[39m: [31mAuthentication error: jwt expired[39m
+2025-11-05 17:36:42:3642 [31merror[39m: [31mAuthentication error: jwt expired[39m

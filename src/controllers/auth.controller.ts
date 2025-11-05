@@ -4,8 +4,8 @@ import { UserLogin, UserRegister } from '../types/auth.types';
 import { logger } from '../config/logger.config';
 import { rsaDecrypt } from '../utils/rsa.utils';
 import JWTUtils from '../utils/jwt.utils';
-import {  PrismaClient } from '@prisma/client';
-import { extractDCT8x8 } from '../utils/stego.utils';
+import { PrismaClient } from '@prisma/client';
+import { extractLSB } from '../utils/stego.utils';
 import { superEncrypt, superDecrypt } from '../utils/superEncryption.utils';
 
 
@@ -42,7 +42,7 @@ export class AuthController {
             logger.info(`Registration request received for email: ${userData.email}`);
 
             const result = await this.authService.register(userData);
-            
+
             return res.status(result.status ? 201 : 400).json(result);
         } catch (error) {
             logger.error(`Registration controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
@@ -106,43 +106,33 @@ export class AuthController {
     }
 
 
-    async loginByCard(req: Request, res:Response) { 
+    async loginByCard(req: Request, res: Response) {
         try {
-            if(!req.file) return res.status(400).json({ status:false, message:'card image required' });
-            const userId = Number(req.body.userId);
-        
-            const extractedEncrypted =  await extractDCT8x8(req.file.buffer);
-
-            // if (extractedEncrypted.length < 4) return res.status(400).send("no payload");
-
-            // const packagedLen = extractedEncrypted.readUInt32BE(0);
-            // const packaged = extractedEncrypted.slice(4, 4 + packagedLen);
-            
-            // console.log(packaged);
-            // decrypt super-encrypted payload
+            if (!req.file) return res.status(400).json({ status: false, message: 'card image required' });
+            const extractedEncrypted = await extractLSB(req.file.buffer);
             const payloadJson = superDecrypt(extractedEncrypted); // returns JSON string
             const payload = JSON.parse(payloadJson);
 
             // verify token inside payload
             const verified = JWTUtils.verifyCardToken(payload.token);
-            if(!verified || verified.userId !== userId){
-              return res.status(401).json({ status:false, message:'invalid card token' });
+            if (!verified || !verified.userId) {
+                return res.status(401).json({ status: false, message: 'invalid card token' });
             }
 
             const user = await prisma.user.findUnique({
-                where : {
-                    id: userId
+                where: {
+                    id: verified.userId
                 }
             })
 
             if (!user) {
                 return {
-                    message : "error"
+                    message: "error"
                 }
             }
 
             const accessToken = JWTUtils.generateAccessToken({
-                userId: userId,
+                userId: user.id,
                 email: rsaDecrypt(user?.email),
                 role: user.role
             });
@@ -152,18 +142,18 @@ export class AuthController {
                 email: rsaDecrypt(user.email),
                 role: user.role
             });
-        
+
             return res.json({
-              status: true,
-              message: 'Login by card successful',
-              data: { userId, accessToken, refreshToken }
+                status: true,
+                message: 'Login by card successful',
+                data: { user: user, accessToken, refreshToken }
             });
-        
-          } catch (err: any){
+
+        } catch (err: any) {
             console.error(err);
-            return res.status(400).json({ status:false, message:'failed to login by card', error: err.message });
-          }
+            return res.status(400).json({ status: false, message: 'failed to login by card', error: err.message });
+        }
     }
 
-    
+
 }
