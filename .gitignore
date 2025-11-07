@@ -5,4 +5,4 @@
 /package-lock.json
 /yarn.lock
 /logs
-.env
+*.env
