@@ -20,8 +20,7 @@ const ENCRYPTED_FIELDS = ['email', 'username'];
 const PROFILE_ENCRYPTED_FIELDS = [
     "fullname",
     "address",
-    "gender",
-    "dateOfBirth",
+    "birthDate",
     "avatarUrl"
   ];
 
@@ -112,7 +111,7 @@ export class UserService {
 
     async getUserProfile(userId: number) {
         try {
-
+            console.log("user dengan id = " , userId , " akan mendapatkan user profile")
             const user = await prisma.user.findUnique({
                 where: {id : userId},
                 select : {
@@ -120,9 +119,13 @@ export class UserService {
                 }
             })
 
+            console.log("data user dari database yang masih dienkripsi = ", user)
+
             const profileUser = await prisma.profile.findUnique({
                 where: { userId: userId }
             });
+
+            console.log("data profile dari database yang masih dienkripsi = ", profileUser)
 
             const isMemberUser = await this.isMemberUser(userId);
 
@@ -135,30 +138,34 @@ export class UserService {
 
             logger.info("fullname encrypted: " + profileUser?.fullname);
             logger.info("address encrypted: " + profileUser?.address);
-            logger.info("gender encrypted   : " + profileUser?.gender);
+
             const decryptedUserProfile = {
                 fullname: rsaDecrypt(profileUser?.fullname || ''),
                 email : rsaDecrypt(user?.email || ""),
                 address: rsaDecrypt(profileUser?.address || ''),
                 birthDate: rsaDecrypt(profileUser?.birthDate || ''),
-            
             }
 
             logger.info(`Successfully decrypted profile for User ID: ${userId}`);
             logger.info(decryptedUserProfile);    
 
-
-            const identityCardUrl = await SupabaseStorageService.getIdentityCardUrl(userId.toString());
             
-            const data = {...decryptedUserProfile, avatar: profileUser.avatarUrl, gender: profileUser.gender, isMemberUser, lastUpdated: profileUser.updatedAt, identityCardUrl};
+            const data = {...decryptedUserProfile, avatar: profileUser.avatarUrl, gender: profileUser.gender, isMemberUser, lastUpdated: profileUser.updatedAt};
             
             if (isMemberUser) {
+                console.log("user adalah member")
+                const identityCardUrl = await SupabaseStorageService.getIdentityCardUrl(userId.toString());
+                console.log("identity card file url sudah bisa didapatkan");
+
+
                 const memberUser = await prisma.user.findUnique({
                     where: { id: userId },
                     select: { membershipCardUrl: true }
                 });
+
+
                 const membershipCardURL = memberUser?.membershipCardUrl || null;
-                Object.assign(data, { membershipCardURL });
+                Object.assign(data, { membershipCardURL,identityCardUrl });
             }
 
             return {
@@ -167,6 +174,7 @@ export class UserService {
                 data
             };
         } catch (error) {
+            console.log(error)
             logger.error(`Get profile error: ${error instanceof Error ? error.message : 'Unknown error'}`);
             return {
                 status: false,
@@ -235,15 +243,18 @@ export class UserService {
 
 
     async updateProfileData(userId: number, profileData: any, avatarFile?: Buffer) {
-        try {
-            // Encrypt sensitive fields before updating
-            
+        try {            
             if (avatarFile) {
                 const avatarUrl = await SupabaseStorageService.uploadAvatarImage(avatarFile, `${userId}-avatar.png`);
                 profileData = {...profileData, avatarUrl};    
             }
 
-            const encryptedData: any = { ...profileData };
+
+            const {email, ...otherProfileData} = profileData;
+            console.log(otherProfileData);
+            
+
+            const encryptedData: any = { ...otherProfileData };
             for (const field of PROFILE_ENCRYPTED_FIELDS) {
                 if (profileData[field]) {
                     encryptedData[field] = rsaEncrypt(profileData[field]);
@@ -252,17 +263,41 @@ export class UserService {
 
             logger.info("encryptedData", encryptedData);
 
-            const data = await prisma.profile.update({
+            const profile = await prisma.profile.update({
                 where: { userId: userId },
                 data: encryptedData
             });
+
+            const userData = await prisma.user.update({
+                where : {
+                    id : userId
+                },
+                data : {
+                    email: rsaEncrypt(profileData.email)
+                }
+            })
+
+            
+
+
+            const response = {
+                id: profile.id,
+                userId: userId,
+                fullname: rsaDecrypt(profile.fullname),
+                birthDate: rsaDecrypt(profile.birthDate),
+                gender: profile.gender,
+                address : rsaDecrypt(profile.address),
+                avatarUrl: profile.avatarUrl,
+                createdAt: profile.createdAt,
+                updatedAt: profile.updatedAt
+            }
 
             logger.info(`Successfully updated profile data for User ID: ${userId}`);
 
             return {
                 status: true,
-                message: 'Update usee profile successfully',
-                data
+                message: 'Update user profile successfully',
+                data : response
             };
         } catch (error) {
             logger.error(`Update profile data error: ${error instanceof Error ? error.message : 'Unknown error'}`);

@@ -2,8 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import { logger } from '../config/logger.config';
 import { UserService } from '../services/user.service';
 
-
-
 interface requestWithUser extends Request {
     user?: {
         userId: number;
@@ -11,7 +9,6 @@ interface requestWithUser extends Request {
         role: string;
     };
 }
-
 
 const userService = new UserService()
 export const membershipMiddleware = (req: requestWithUser, res: Response, next: NextFunction) => {

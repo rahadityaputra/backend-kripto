@@ -7,19 +7,18 @@ import { morganMiddleware } from './config/logger.config';
 import { authMiddleware } from './middleware/auth.middleware';
 import { membershipMiddleware } from './middleware/membership.middleware';
 import membershipRoutes from './routes/news.routes';
-
+import fs from "fs"
+import https from "https"
 const app = express();
 
-
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(morganMiddleware);
 app.use(loggingMiddleware);
 app.use('/api/auth', authRoutes);
@@ -28,10 +27,15 @@ app.use('/api/news',authMiddleware, membershipMiddleware, membershipRoutes);
 
 const PORT = process.env.PORT || 3000;
 
+const options = {
+    key: fs.readFileSync('/home/rahadityaputra/certs/localhost+2-key.pem'),  
+    cert: fs.readFileSync('/home/rahadityaputra/certs/localhost+2.pem') 
+};
+
 if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
+    https.createServer(options, app).listen(PORT, () => {
+        console.log(`🚀 Backend Express berjalan di https://localhost:${PORT}`);
+      });
 }
 
 export default app;
