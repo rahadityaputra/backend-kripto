@@ -1,6 +1,5 @@
 import winston from 'winston';
 import morgan from 'morgan';
-import { Request, Response, NextFunction } from 'express';
 
 const levels = {
     error: 0,

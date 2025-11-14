@@ -4,7 +4,6 @@ import { logger } from '../config/logger.config';
 
 export const validateAuthInput = (req: Request, res: Response, next: NextFunction) => {
     logger.info('Validating authentication input');
-    console.log("fungsi ini dipanggil");
     const { email, password } = req.body;
     logger.info(req.body);
 
@@ -20,7 +19,7 @@ export const validateAuthInput = (req: Request, res: Response, next: NextFunctio
     // Password validation (minimum 8 characters, at least one uppercase, one lowercase, one number)
     // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     // if (!password || !passwordRegex.test(password)) {
-        if (!password || password.length < 8 ) {
+    if (!password || password.length < 8) {
         return res.status(400).json({
             status: false,
             message: 'Password requirements not met. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.'

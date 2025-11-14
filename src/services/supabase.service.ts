@@ -38,7 +38,6 @@ export class SupabaseStorageService {
                 throw error;
             }
 
-            // Ambil public URL
             const {
                 data: { publicUrl },
             } = supabase.storage.from(identityBucket).getPublicUrl(fileName);
@@ -144,7 +143,6 @@ export class SupabaseStorageService {
             throw new Error(`Failed to load original membership image: ${error.message}`);
         }
 
-        // data adalah Blob → convert ke Buffer
         const arrayBuffer = await data.arrayBuffer();
         return Buffer.from(arrayBuffer);
     }
@@ -155,30 +153,38 @@ export class SupabaseStorageService {
             .from(membershipCardBucket)
             .download(path);
 
-        console.log("hasil download supabase",data);
         if (error) throw new Error(error.message);
-        return data; 
+        return data;
     }
 
     static async getIdentityCardUrl(userId: string) {
-        const filePath = `${userId}-identity-card.png`; // path file di bucket
+        const filePath = `${userId}-identity-card.png`; 
         const { data, error } = await supabase
-          .storage
-          .from(identityBucket)   // nama bucket
-          .createSignedUrl(filePath, 60); // URL berlaku 60 detik
-      
+            .storage
+            .from(identityBucket)   
+            .createSignedUrl(filePath, 60);
+
         if (error) throw error;
         return data.signedUrl;
-      }
+    }
+
+    static async getMembershipCardUrl(userId: string) {
+        const filePath = `${userId}/stegano-membership-card.png`; 
+        const { data, error } = await supabase
+            .storage
+            .from(membershipCardBucket)   
+            .createSignedUrl(filePath, 60); 
+        if (error) throw error;
+        return data.signedUrl;
+    }
 
     static async downloadIdentityCard(path: string) {
         const { data, error } = await supabase.storage
             .from(identityBucket)
             .download(path);
 
-        console.log("hasil download supabase",data);
         if (error) throw new Error(error.message);
-        return data; 
+        return data;
     }
-    
+
 }

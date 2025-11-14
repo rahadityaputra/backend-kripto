@@ -1,16 +1,7 @@
 import { Request, Response } from 'express';
-import { AuthService } from '../services/auth.service';
-import { UserLogin, UserRegister } from '../types/auth.types';
 import { logger } from '../config/logger.config';
-import { SupabaseStorageService } from '../services/supabase.service';
-import CanvasUtils from '../utils/canvas,utils';
 import { UserService } from '../services/user.service';
-import { superEncrypt } from '../utils/superEncryption.utils';
-
-import JWTUtils from '../utils/jwt.utils';
-import { embedLSB } from '../utils/stego.utils';
-import { AESUtils } from '../utils/aes.utils';
-import { createCanvas, ImageData } from "canvas";
+import { BadRequestError, UnauthorizedError } from '../utils/errors';
 
 interface UserRequest extends Request {
     user?: {
@@ -21,11 +12,9 @@ interface UserRequest extends Request {
 }
 
 export class UserController {
-    private authService: AuthService;
     private userService: UserService;
 
     constructor() {
-        this.authService = new AuthService();
         this.userService = new UserService();
     }
 
@@ -48,259 +37,112 @@ export class UserController {
         }
     }
 
-    async verifyEmail(req: Request, res: Response) {
-        try {
-            const { userId, code } = req.body;
-            logger.info(`Email verification request received for user ID: ${userId}`);
-
-            const result = await this.authService.verifyEmail(userId, code);
-            return res.status(result.status ? 200 : 400).json(result);
-        } catch (error) {
-            logger.error(`Email verification controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
-        }
-    }
-
-    async login(req: Request, res: Response) {
-        try {
-            const loginData: UserLogin = req.body;
-            logger.info(`Login request received for email: ${loginData.email}`);
-
-            const result = await this.authService.login(loginData);
-            return res.status(result.status ? 200 : 401).json(result);
-        } catch (error) {
-            logger.error(`Login controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
-        }
-    }
-
-    async verifyLogin(req: Request, res: Response) {
-        try {
-            const { userId, code } = req.body;
-            logger.info(`Login verification request received for user ID: ${userId}`);
-
-            const result = await this.authService.verifyLogin(userId, code);
-            return res.status(result.status ? 200 : 400).json(result);
-        } catch (error) {
-            logger.error(`Login verification controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
-        }
-    }
-
     async uploadIdentityCard(req: UserRequest, res: Response) {
-        try {
-            const userId = req.user?.userId;
-
-            if (!userId) {
-                return res.status(401).json({
-                    status: false,
-                    message: 'Unauthorized'
-                });
-            }
-            const file = req.file;
-
-            if (!file) {
-                return res.status(400).json({
-                    status: false,
-                    message: 'No file uploaded'
-                });
-            }
-
-
-            logger.info(`Processing identity card upload for user ID: ${userId}`);
-
-            const cardToken = JWTUtils.generateCardToken(userId, 60 * 60 * 24 * 7);
-            const payload = JSON.stringify({ userId, token: cardToken, iat: Date.now() });
-
-            const encrypted = superEncrypt(payload);
-            const identityBuffer = file.buffer;
-            const fullname = await this.userService.getUserFullName(userId);
-            const fileMembershipCardBuffer = await CanvasUtils.createMemberCard({ memberId: userId.toString(), memberName: fullname });
-
-            const stegoBuffer = await embedLSB(fileMembershipCardBuffer, encrypted);
-
-            const key = Buffer.from(process.env.AES_KEY!, "base64");
-
-            const encryptedIdentityCardBuffer = AESUtils.encryptBuffer(identityBuffer, key);
-
-            const imageUrl = await SupabaseStorageService.uploadEncryptedImage(encryptedIdentityCardBuffer, userId);
-
-            const filename = `stegano-membership-card.png`;
-            const steganoUrl = await SupabaseStorageService.uploadBufferAsImage(stegoBuffer, userId.toString(), filename);
-
-            const membershipCardUrl = await SupabaseStorageService.uploadBufferAsImage(fileMembershipCardBuffer, userId.toString(), 'original-membership-card.png');
-
-
-            if (!imageUrl) {
-                logger.error(`Failed to upload identity card for user ID: ${userId}`);
-                return res.status(500).json({
-                    status: false,
-                    message: 'Failed to upload identity card'
-                });
-            }
-
-            const memberUser = await this.userService.setMemberUser(userId);
-            await this.userService.updateMembershipCardUrl(userId, membershipCardUrl);
-
-            logger.info(`Successfully uploaded identity card for user ID: ${userId}`);
-            return res.status(200).json({
-                data: {
-                    membershipCardUrl: steganoUrl,
-                    ...memberUser
-                },
-                status: true,
-                message: 'Identity card uploaded successfully'
-
-            });
-        } catch (error) {
-            console.log(error);
-            logger.error(`Identity card upload error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
+        const userId = req.user?.userId;
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
         }
+
+        const file = req.file;
+        if (!file) {
+            throw new BadRequestError('No file uploaded');
+        }
+
+        const resultData = await this.userService.processIdentityAndCreateMembership(
+            userId,
+            file.buffer
+        );
+
+        logger.info(`Successfully processed identity card and created membership for user ID: ${userId}`);
+        return res.status(200).json({
+            data: resultData,
+            status: true,
+            message: 'Identity card uploaded successfully'
+        });
     }
-
+   
     async getUserProfile(req: UserRequest, res: Response) {
-        try {
-            const userId = req.user?.userId;
-            if (!userId) {
-                return res.status(401).json({
-                    status: false,
-                    message: 'Unauthorized'
-                });
-            }
-
-            logger.info(`Fetching user profile for user ID: ${userId}`);
-
-            const result = await this.userService.getUserProfile(userId);
-
-            return res.status(result.status ? 200 : 400).json(result);
-
-        } catch (error) {
-            logger.error(`Get user profile controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
+        const userId = req.user?.userId;
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
         }
+
+        logger.info(`Fetching user profile for user ID: ${userId}`);
+
+        const result = await this.userService.getUserProfile(userId);
+
+        return res.status(result.status ? 200 : 400).json(result);
     }
 
 
     async updateProfileData(req: UserRequest, res: Response) {
-        try {
-            const userId = req.user?.userId;
-            if (!userId) {
-                return res.status(401).json({
-                    status: false,
-                    message: 'Unauthorized'
-                });
-            }
-
-            const profileData = req.body;
-            const file = req.file;
-            const avatarUploadBuffer = file?.buffer;
-
-            logger.info(`Updating profile data for user ID: ${userId}`);
-
-            const result = await this.userService.updateProfileData(userId, profileData, avatarUploadBuffer);
-
-            return res.status(result.status ? 200 : 400).json(result);
-
-        } catch (error) {
-            logger.error(`Update profile data controller error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return res.status(500).json({
-                status: false,
-                message: 'Internal server error',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            });
+        const userId = req.user?.userId;
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
         }
+
+        const profileData = req.body;
+        const file = req.file;
+        const avatarUploadBuffer = file?.buffer;
+
+        logger.info(`Updating profile data for user ID: ${userId}`);
+
+        const result = await this.userService.updateProfileData(userId, profileData, avatarUploadBuffer);
+
+        return res.status(result.status ? 200 : 400).json(result);
     }
 
     async downloadMembershipCard(req: UserRequest, res: Response) {
-        try {
-            const userId = req.user?.userId; 
+        const userId = req.user?.userId;
 
-            if (!userId) {
-                return res.status(401).json({
-                    status: false,
-                    message: "Unauthorized",
-                });
-            }
-
-            const filename = `${userId}/stegano-membership-card.png`;
-
-            const fileBlob = await SupabaseStorageService.downloadFile(filename);
-            const arrayBuffer = await fileBlob.arrayBuffer();
-            const buffer = Buffer.from(arrayBuffer);
-
-            res.setHeader("Content-Type", "image/png");
-            res.setHeader(
-                "Content-Disposition",
-                `attachment; filename=membership-card-${userId}.png`
-            );
-
-            return res.send(buffer);
-        } catch (error) {
-            console.log(error);
-            return res.status(500).json({
-                status: false,
-                message: "Failed to download membership card",
-                error: error instanceof Error ? error.message : "Unknown error",
-            });
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
         }
+
+        const buffer = await this.userService.downloadMembershipCardBuffer(userId);
+
+        res.setHeader("Content-Type", "image/png");
+        res.setHeader(
+            "Content-Disposition",
+            `attachment; filename=membership-card-${userId}.png`
+        );
+
+        return res.send(buffer);
     }
 
     async downloadIdentityCard(req: UserRequest, res: Response) {
-        try {
-            const userId = req.user?.userId; 
+        const userId = req.user?.userId;
 
-            if (!userId) {
-                return res.status(401).json({
-                    status: false,
-                    message: "Unauthorized",
-                });
-            }
-
-            const filename = `${userId}-identity-card.png`;
-
-            const fileBlob = await SupabaseStorageService.downloadIdentityCard(filename);
-            const arrayBuffer = await fileBlob.arrayBuffer(); // kalau fileBlob adalah Blob
-            const buffer = Buffer.from(arrayBuffer);
-
-            const key = Buffer.from(process.env.AES_KEY!, "base64");
-            const bufferDecrypted = AESUtils.decryptBuffer(buffer, key);
-
-            res.setHeader("Content-Type", "image/png");
-            res.setHeader(
-                "Content-Disposition",
-                `attachment; filename=identity-card.png`
-            );
-
-            return res.send(bufferDecrypted);
-        } catch (error) {
-            console.log(error);
-            return res.status(500).json({
-                status: false,
-                message: "Failed to download membership card",
-                error: error instanceof Error ? error.message : "Unknown error",
-            });
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
         }
+
+        const buffer = await this.userService.downloadIdentityCardBuffer(userId);
+
+        res.setHeader("Content-Type", "image/png");
+        res.setHeader(
+            "Content-Disposition",
+            `attachment; filename=identity-card.png`
+        );
+
+        return res.send(buffer);
+    }
+
+    async getMembershipStatus(req: UserRequest, res: Response) {
+        const userId = req.user?.userId;
+
+        if (!userId) {
+            throw new UnauthorizedError('Unauthorized');
+        }
+
+        const isMember = await this.userService.isMemberUser(userId);
+
+        return res.status(200).json({
+            status: true,
+            data: {
+                isMember
+            }
+        });
     }
 
 

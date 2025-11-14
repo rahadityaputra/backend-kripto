@@ -6,6 +6,9 @@ import { logger } from '../config/logger.config';
 import { rsaDecrypt, rsaDecryptFields, rsaEncrypt, rsaEncryptFields } from '../utils/rsa.utils';
 import AvatarUtils from '../utils/avatar.utils';
 import { SupabaseStorageService } from './supabase.service';
+import { extractLSB } from '../utils/stego.utils';
+import { superDecrypt } from '../utils/superEncryption.utils';
+import { InvalidCardDataError, InvalidTokenError, UserNotFoundError } from '../utils/errors';
 
 const prisma = new PrismaClient();
 
@@ -53,7 +56,7 @@ export class AuthService {
 
     async register(userData: UserRegister): Promise<AuthResponse> {
         try {
-            
+
 
             logger.info('Registering user with data: ' + JSON.stringify(userData));
             const allUsers = await prisma.user.findMany({
@@ -77,23 +80,17 @@ export class AuthService {
             }
 
             const hashedPassword = await ScryptUtils.hashPassword(userData.password);
-            
-            // Encrypt sensitive fields using explicit type
-            console.log('Encrypting user data for registration', userData);
+
             const encryptedData = rsaEncryptFields<UserRegister>(userData, ENCRYPTED_FIELDS as (keyof UserRegister)[]);
-            console.log('Encrypted user data for registration', encryptedData);
 
             const fullname_encrypted = rsaEncrypt(userData.fullname);
-            console.log('Encrypted fullname:', fullname_encrypted);
             const dateOfBirth_encrypted = rsaEncrypt(userData.dateOfBirth);
-            console.log('Encrypted dateOfBirth:', dateOfBirth_encrypted);
             const address_encrypted = rsaEncrypt(userData.address);
-            console.log('Encrypted address:', address_encrypted);
 
             const avatarBuffer = await AvatarUtils.generateAvatarImageFile(userData.fullname);
 
-            
-            
+
+
             const user = await prisma.user.create({
                 data: {
                     email: encryptedData.email,
@@ -103,7 +100,7 @@ export class AuthService {
                     emailVerified: true
                 }
             });
-            
+
             const profileAvatarUrl = await SupabaseStorageService.uploadAvatarImage(avatarBuffer, `${user.id}_avatar.png`);
 
             await prisma.profile.create({
@@ -111,7 +108,7 @@ export class AuthService {
                     userId: user.id,
                     fullname: fullname_encrypted,
                     birthDate: dateOfBirth_encrypted,
-                    address :address_encrypted,      
+                    address: address_encrypted,
                     gender: userData.gender,
                     avatarUrl: profileAvatarUrl as string
                 }
@@ -147,7 +144,7 @@ export class AuthService {
             return {
                 status: false,
                 message: 'Registration failed',
-                
+
                 error: error instanceof Error ? error.message : 'Unknown error'
             };
         }
@@ -284,7 +281,7 @@ export class AuthService {
 
     private decryptUserData<T extends Record<string, any>>(user: T): Omit<T, 'password'> {
         const decryptedUser = rsaDecryptFields(user, ENCRYPTED_FIELDS as (keyof T)[]);
-        const { password, ...userWithoutPassword } = decryptedUser;
+        const { password: _, ...userWithoutPassword } = decryptedUser;
         return userWithoutPassword;
     }
 
@@ -351,6 +348,80 @@ export class AuthService {
                 message: 'Login verification failed',
                 error: error instanceof Error ? error.message : 'Unknown error'
             };
+        }
+    }
+
+    async handleCardLogin(fileBuffer: Buffer): Promise<AuthResponse> {
+        try {
+            // Extract encrypted data from image
+            const extractedEncrypted = await extractLSB(fileBuffer);
+            if (!extractedEncrypted) {
+                throw new InvalidCardDataError('Failed to extract data from card image');
+            }
+
+            // Decrypt the extracted data
+            const payloadJson = superDecrypt(extractedEncrypted);
+            if (!payloadJson) {
+                throw new InvalidCardDataError('Failed to decrypt payload');
+            }
+
+            // Parse JSON payload
+            let payload: any;
+            try {
+                payload = JSON.parse(payloadJson);
+            } catch (parseError) {
+                throw new InvalidCardDataError('Invalid payload format');
+            }
+
+            // Verify token inside payload
+            const verified = JWTUtils.verifyCardToken(payload.token);
+            if (!verified || !verified.userId) {
+                throw new InvalidTokenError('Invalid card token');
+            }
+
+            // Find user
+            const user = await prisma.user.findUnique({
+                where: {
+                    id: verified.userId
+                }
+            });
+
+            if (!user) {
+                throw new UserNotFoundError('User not found');
+            }
+
+            // Decrypt email once
+            const decryptedEmail = rsaDecrypt(user.email);
+
+            // Generate tokens
+            const accessToken = JWTUtils.generateAccessToken({
+                userId: user.id,
+                email: decryptedEmail,
+                role: user.role
+            });
+
+            const refreshToken = JWTUtils.generateRefreshToken({
+                userId: user.id,
+                email: decryptedEmail,
+                role: user.role
+            });
+
+            const decryptedUser = this.decryptUserData(user);
+
+            logger.info(`Card login successful for user ID: ${user.id}`);
+            return {
+                status: true,
+                message: 'Login by card successful',
+                data: {
+                    user: decryptedUser,
+                    accessToken,
+                    refreshToken
+                }
+            };
+
+        } catch (error) {
+            logger.error(`Card login error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+            throw error; // Re-throw to let controller handle specific error types
         }
     }
 
