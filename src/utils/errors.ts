@@ -6,13 +6,12 @@ export class AppError extends Error {
         super(message);
         this.statusCode = statusCode;
         this.isOperational = isOperational;
-
-        // Maintains proper stack trace for where our error was thrown (only available on V8)
+        
         if (Error.captureStackTrace) {
             Error.captureStackTrace(this, this.constructor);
         }
 
-        // Set the prototype explicitly
+        
         Object.setPrototypeOf(this, AppError.prototype);
     }
 }
@@ -47,7 +46,7 @@ export class InternalServerError extends AppError {
     }
 }
 
-// Specific application errors
+
 export class InvalidCardDataError extends BadRequestError {
     constructor(message: string = 'Invalid card data') {
         super(message);

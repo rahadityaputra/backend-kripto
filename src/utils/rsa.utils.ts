@@ -30,11 +30,11 @@ export function rsaEncrypt(data: string): string {
 
 export function rsaDecrypt(encrypted: string): string {
     const key = new NodeRSA(PRIVATE_KEY);
-  key.setOptions({
-    encryptionScheme: {
-      scheme: "pkcs1_oaep",
-      hash: "sha1",
-    },
+    key.setOptions({
+      encryptionScheme: {
+        scheme: "pkcs1_oaep",
+        hash: "sha1",
+      },
   });
   try {
     return key.decrypt(encrypted, "utf8"); // uses PRIVATE part automatically ✅

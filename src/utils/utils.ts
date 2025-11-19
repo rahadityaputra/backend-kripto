@@ -1,7 +1,8 @@
 import { AESUtils } from "./aes.utils";
 import CanvasUtils from "./canvas,utils";
 import JWTUtils from "./jwt.utils";
-import { embedLSB } from "./stego.utils";
+// import { embedLSB } from "./stego.utils";
+import { embedEMD } from "./stego2.utils";
 import { superEncrypt } from "./superEncryption.utils";
 
 export const createEncryptedPayload = (userId: number ) => {
@@ -17,7 +18,7 @@ export const createMemberCardBuffer = async (userId: number, userName: string) =
 }
 
 export const createEncryptedMemberCardStegoBuffer = async (fileMembershipCardBuffer: Buffer, payload: Buffer) => {
-    const stegoBuffer = await embedLSB(fileMembershipCardBuffer, payload);
+    const stegoBuffer = await embedEMD(fileMembershipCardBuffer, payload);
     const stegoBufferEncryped = encryptFile(stegoBuffer);
     return stegoBufferEncryped
 }

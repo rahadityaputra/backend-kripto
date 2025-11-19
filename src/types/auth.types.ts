@@ -15,7 +15,6 @@ export interface UserRegister {
     password: string;
     username: string;
     address: string;
-    role?: string;
     gender: UserGender;
 }
 

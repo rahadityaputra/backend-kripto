@@ -13,7 +13,7 @@ import https from "https"
 const app = express();
 
 app.use(cors({
-    origin: "https://localhost:5173",
+    origin: "https:
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -26,7 +26,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', authMiddleware, userRoutes);
 app.use('/api/news', authMiddleware, membershipMiddleware, membershipRoutes);
 
-// Global error handler (must be last)
+
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;

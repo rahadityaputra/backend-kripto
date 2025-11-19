@@ -17,8 +17,6 @@ model User {
   email           String    @db.VarChar(1000)    @unique
   username        String    @db.VarChar(1000)    @unique
   password        String
-  role            String    @default("user")
-  emailVerified   Boolean   @default(false)
   isMemberUser    Boolean   @default(false)
   identityCardUrl String?   @map("identity_card_url")
   membershipCardUrl String?   @map("membership_card_url")

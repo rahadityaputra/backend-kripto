@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken';
 interface TokenPayload {
     userId: number;
     email: string;
-    role: string;
 }
 
 class JWTUtils {

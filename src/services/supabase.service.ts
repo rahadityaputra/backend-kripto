@@ -16,7 +16,7 @@ export class SupabaseStorageService {
     static async uploadEncryptedImage(
         encryptedBuffer: Buffer,
         userId: number,
-        fileExt: string = "png" // default jika tidak diberikan
+        fileExt: string = "png" 
     ): Promise<string | null> {
         try {
             logger.info("Supabase URL: " + supabaseUrl);

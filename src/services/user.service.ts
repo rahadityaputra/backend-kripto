@@ -57,14 +57,12 @@ export class UserService {
 
             const accessToken = JWTUtils.generateAccessToken({
                 userId: decoded.userId,
-                email: decoded.email,
-                role: decoded.role
+                email: decoded.email
             });
 
             const newRefreshToken = JWTUtils.generateRefreshToken({
                 userId: decoded.userId,
-                email: decoded.email,
-                role: decoded.role
+                email: decoded.email
             });
 
             return {

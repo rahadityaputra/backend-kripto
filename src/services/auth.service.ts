@@ -6,16 +6,17 @@ import { logger } from '../config/logger.config';
 import { rsaDecrypt, rsaDecryptFields, rsaEncrypt, rsaEncryptFields } from '../utils/rsa.utils';
 import AvatarUtils from '../utils/avatar.utils';
 import { SupabaseStorageService } from './supabase.service';
-import { extractLSB } from '../utils/stego.utils';
 import { superDecrypt } from '../utils/superEncryption.utils';
 import { InvalidCardDataError, InvalidTokenError, UserNotFoundError } from '../utils/errors';
 
+import { extractEMD } from '../utils/stego2.utils';
+
 const prisma = new PrismaClient();
 
-// In-memory storage for verification codes
+
 const verificationCodes = new Map<number, string>();
 
-// Define encrypted fields as an array instead of readonly tuple
+
 const ENCRYPTED_FIELDS = ['email', 'username'];
 
 export class AuthService {
@@ -26,14 +27,12 @@ export class AuthService {
 
             const accessToken = JWTUtils.generateAccessToken({
                 userId: decoded.userId,
-                email: decoded.email,
-                role: decoded.role
+                email: decoded.email
             });
 
             const newRefreshToken = JWTUtils.generateRefreshToken({
                 userId: decoded.userId,
-                email: decoded.email,
-                role: decoded.role
+                email: decoded.email
             });
 
             return {
@@ -80,28 +79,22 @@ export class AuthService {
             }
 
             const hashedPassword = await ScryptUtils.hashPassword(userData.password);
-
             const encryptedData = rsaEncryptFields<UserRegister>(userData, ENCRYPTED_FIELDS as (keyof UserRegister)[]);
-
             const fullname_encrypted = rsaEncrypt(userData.fullname);
             const dateOfBirth_encrypted = rsaEncrypt(userData.dateOfBirth);
             const address_encrypted = rsaEncrypt(userData.address);
-
             const avatarBuffer = await AvatarUtils.generateAvatarImageFile(userData.fullname);
-
-
-
+            
             const user = await prisma.user.create({
                 data: {
                     email: encryptedData.email,
                     username: encryptedData.username,
-                    password: hashedPassword,
-                    role: userData.role || 'user',
-                    emailVerified: true
+                    password: hashedPassword
                 }
             });
-
+            
             const profileAvatarUrl = await SupabaseStorageService.uploadAvatarImage(avatarBuffer, `${user.id}_avatar.png`);
+            const encryptedAvatarURL = rsaEncrypt(profileAvatarUrl!);
 
             await prisma.profile.create({
                 data: {
@@ -110,7 +103,7 @@ export class AuthService {
                     birthDate: dateOfBirth_encrypted,
                     address: address_encrypted,
                     gender: userData.gender,
-                    avatarUrl: profileAvatarUrl as string
+                    avatarUrl: encryptedAvatarURL as string
                 }
             })
 
@@ -118,14 +111,12 @@ export class AuthService {
 
             const accessToken = JWTUtils.generateAccessToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
 
             const refreshToken = JWTUtils.generateRefreshToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
 
             logger.info(`User registered successfully with ID: ${user.id}`);
@@ -150,68 +141,9 @@ export class AuthService {
         }
     }
 
-    async verifyEmail(userId: number, code: string): Promise<AuthResponse> {
-        try {
-            const storedCode = verificationCodes.get(userId);
-
-            if (!storedCode) {
-                logger.warn(`Verification attempt with no stored code for user ID: ${userId}`);
-                return {
-                    status: false,
-                    message: 'Verification code not found'
-                };
-            }
-
-            if (storedCode !== code) {
-                logger.warn(`Invalid verification code used for user ID: ${userId}`);
-                return {
-                    status: false,
-                    message: 'Invalid verification code'
-                };
-            }
-
-            const user = await prisma.user.update({
-                where: { id: userId },
-                data: { emailVerified: true }
-            });
-
-            verificationCodes.delete(userId);
-            logger.info(`Email verified successfully for user ID: ${userId}`);
-
-            const decryptedUser = this.decryptUserData(user);
-            const accessToken = JWTUtils.generateAccessToken({
-                userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
-            });
-            const refreshToken = JWTUtils.generateRefreshToken({
-                userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
-            });
-
-            return {
-                status: true,
-                message: 'Email verified successfully',
-                data: {
-                    user: decryptedUser,
-                    accessToken,
-                    refreshToken
-                }
-            };
-        } catch (error) {
-            logger.error(`Email verification error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            return {
-                status: false,
-                message: 'Email verification failed',
-                error: error instanceof Error ? error.message : 'Unknown error'
-            };
-        }
-    }
-
     async login(loginData: UserLogin): Promise<AuthResponse> {
         try {
-            // Find user by encrypted email
+            
             const allUsers = await prisma.user.findMany();
             const user = allUsers.find(u => {
                 try {
@@ -238,25 +170,15 @@ export class AuthService {
                 };
             }
 
-            if (!user.emailVerified) {
-                logger.warn(`Login attempt with unverified email: ${loginData.email}`);
-                return {
-                    status: false,
-                    message: 'Email not verified'
-                };
-            }
-
             const decryptedUser = this.decryptUserData(user);
             const accessToken = JWTUtils.generateAccessToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
 
             const refreshToken = JWTUtils.generateRefreshToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
 
 
@@ -323,13 +245,11 @@ export class AuthService {
             const decryptedUser = this.decryptUserData(user);
             const accessToken = JWTUtils.generateAccessToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
             const refreshToken = JWTUtils.generateRefreshToken({
                 userId: user.id,
-                email: rsaDecrypt(user.email),
-                role: user.role
+                email: rsaDecrypt(user.email)
             });
 
             return {
@@ -353,33 +273,29 @@ export class AuthService {
 
     async handleCardLogin(fileBuffer: Buffer): Promise<AuthResponse> {
         try {
-            // Extract encrypted data from image
-            const extractedEncrypted = await extractLSB(fileBuffer);
+            const extractedEncrypted = await extractEMD(fileBuffer);
             if (!extractedEncrypted) {
                 throw new InvalidCardDataError('Failed to extract data from card image');
             }
 
-            // Decrypt the extracted data
             const payloadJson = superDecrypt(extractedEncrypted);
             if (!payloadJson) {
                 throw new InvalidCardDataError('Failed to decrypt payload');
             }
 
-            // Parse JSON payload
             let payload: any;
             try {
                 payload = JSON.parse(payloadJson);
             } catch (parseError) {
+                logger.info(parseError);
                 throw new InvalidCardDataError('Invalid payload format');
             }
 
-            // Verify token inside payload
             const verified = JWTUtils.verifyCardToken(payload.token);
             if (!verified || !verified.userId) {
                 throw new InvalidTokenError('Invalid card token');
             }
 
-            // Find user
             const user = await prisma.user.findUnique({
                 where: {
                     id: verified.userId
@@ -390,20 +306,16 @@ export class AuthService {
                 throw new UserNotFoundError('User not found');
             }
 
-            // Decrypt email once
             const decryptedEmail = rsaDecrypt(user.email);
 
-            // Generate tokens
             const accessToken = JWTUtils.generateAccessToken({
                 userId: user.id,
                 email: decryptedEmail,
-                role: user.role
             });
 
             const refreshToken = JWTUtils.generateRefreshToken({
                 userId: user.id,
-                email: decryptedEmail,
-                role: user.role
+                email: decryptedEmail
             });
 
             const decryptedUser = this.decryptUserData(user);
@@ -421,7 +333,7 @@ export class AuthService {
 
         } catch (error) {
             logger.error(`Card login error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-            throw error; // Re-throw to let controller handle specific error types
+            throw error; 
         }
     }
 
